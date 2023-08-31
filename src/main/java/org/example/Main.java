@@ -41,7 +41,7 @@ public class Main {
         MenuPrincipal menuPrincipal = new MenuPrincipal(menuCliente, menuTransportista, menuProducto, menuPedido,menuInforme,new MenuProveedor(new ProveedorController(new ProveedorService(new ProveedorRepository()))),menuDeposito);
 
 
-        menuPrincipal.mostrarMenuPrincipal();
+        JFrameLogin frameLogin = new JFrameLogin();
 
     }
 }
