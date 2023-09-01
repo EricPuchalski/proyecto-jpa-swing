@@ -25,7 +25,7 @@ public class JFrameLogin extends javax.swing.JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         JPanelLogin jPanelLogin = new JPanelLogin(this);;
         this.add(jPanelLogin);
-        this.setTitle("Gestor de pedidos");
+        this.setTitle("LDE System");
         this.setVisible(true);
     }
 

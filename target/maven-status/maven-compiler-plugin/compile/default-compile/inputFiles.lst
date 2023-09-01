@@ -1,5 +1,6 @@
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\CategoriaProducto.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\CRUD.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Empleado.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\InformeController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Cliente.java
@@ -42,6 +43,7 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\CRUD.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\ProductoController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuProveedor.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\DepositoService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuInforme.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\PedidoController.java
@@ -51,6 +53,7 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\ClienteService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\EmpleadoService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Proveedor.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelCrearCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuPrincipal.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Transportista.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\CRUD.java

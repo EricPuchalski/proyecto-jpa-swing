@@ -10,7 +10,7 @@ package org.example.controller;
  */
 public class LoginController {
     public static boolean login(String user){
-        if(user.equals("admin")){
+        if(user.equals("")){
             return true;
         }
         return false;
