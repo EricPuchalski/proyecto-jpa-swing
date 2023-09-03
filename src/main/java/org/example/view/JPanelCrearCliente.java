@@ -17,14 +17,12 @@ import org.example.service.ClienteService;
  * @author ericp
  */
 public class JPanelCrearCliente extends javax.swing.JPanel {
-    private JPanelCliente jPanelCliente;
     private ClienteController clienteController;
     /**
      * Creates new form JPanelCrearCliente
      */
-    public JPanelCrearCliente(JPanelCliente jPanelCliente) {
+    public JPanelCrearCliente( ) {
         this.clienteController = new ClienteController(new ClienteService(new ClienteRepository()));
-        this.jPanelCliente = jPanelCliente;
         initComponents();
         this.setSize(800,700);
     }
@@ -222,17 +220,14 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
    
         clienteController.create(new Cliente(txtCuit.getText(), txtName.getText(), txtSurname.getText(),txtAdress.getText(),txtTel.getText()));
-        JOptionPane.showMessageDialog(this, "Usuario creado con excito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Usuario creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
         this.volverPanelCLiente();
        
     }//GEN-LAST:event_btnRegisterActionPerformed
     private void volverPanelCLiente(){
     JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-    contenedor.getContentPane().removeAll();  // Elimina los componentes del contenedor
-    jPanelCliente.setVisible(true);
-    contenedor.add(jPanelCliente);  // Agrega el nuevo panel
-    contenedor.revalidate();
-    contenedor.repaint();
+    contenedor.dispose();
+    JFrameCliente jFrameCliente = new JFrameCliente();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

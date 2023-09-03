@@ -1,8 +1,11 @@
 package org.example;
 
 import org.example.controller.*;
+import org.example.dao.ClienteJpaController;
 import org.example.repository.*;
 import org.example.service.*;
+import org.example.util.CargarDatos;
+import org.example.util.EntityManagerFactoryUTIL;
 import org.example.view.*;
 
 
@@ -40,7 +43,8 @@ public class Main {
 
         MenuPrincipal menuPrincipal = new MenuPrincipal(menuCliente, menuTransportista, menuProducto, menuPedido,menuInforme,new MenuProveedor(new ProveedorController(new ProveedorService(new ProveedorRepository()))),menuDeposito);
 
-
+        CargarDatos cDatos = new CargarDatos(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()));
+        cDatos.cargarDatos();
         JFrameLogin frameLogin = new JFrameLogin();
 
     }

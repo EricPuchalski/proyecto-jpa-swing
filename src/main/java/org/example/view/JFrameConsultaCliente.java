@@ -8,20 +8,20 @@ package org.example.view;
  *
  * @author ericp
  */
-public class JFrameCliente extends javax.swing.JFrame {
+public class JFrameConsultaCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form JFrameCliente
+     * Creates new form JFrameConsultaCliente
      */
-    public JFrameCliente() {
+    public JFrameConsultaCliente() {
         initComponents();
-        
-        this.setSize(800,600);
-        this.setTitle("Gestion cliente");
+        this.setSize(800,700);
+        this.setTitle("Consulta cliente");
         this.setLocationRelativeTo(null);
-        JPanelCliente jPanelCliente = new JPanelCliente();
-        this.add(jPanelCliente);
+        JPanelConsultaCliente jPanelConsultaCliente = new JPanelConsultaCliente();
+        this.add(jPanelConsultaCliente);
         this.setVisible(true);
+        
     }
 
     /**
@@ -39,17 +39,18 @@ public class JFrameCliente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 776, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 607, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

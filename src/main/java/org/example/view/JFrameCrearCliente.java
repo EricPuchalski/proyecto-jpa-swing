@@ -8,19 +8,18 @@ package org.example.view;
  *
  * @author ericp
  */
-public class JFrameCliente extends javax.swing.JFrame {
+public class JFrameCrearCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form JFrameCliente
+     * Creates new form JFrameCrearCliente
      */
-    public JFrameCliente() {
+    public JFrameCrearCliente() {
         initComponents();
-        
-        this.setSize(800,600);
-        this.setTitle("Gestion cliente");
+        this.setSize(800,700);
+        this.setTitle("Crear cliente");
         this.setLocationRelativeTo(null);
-        JPanelCliente jPanelCliente = new JPanelCliente();
-        this.add(jPanelCliente);
+        JPanelCrearCliente jPanelCrearCliente = new JPanelCrearCliente();
+        this.add(jPanelCrearCliente);
         this.setVisible(true);
     }
 
@@ -49,7 +48,8 @@ public class JFrameCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
