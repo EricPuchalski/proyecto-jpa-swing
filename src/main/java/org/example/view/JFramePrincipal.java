@@ -37,6 +37,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        mItemCerrar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuCliente = new javax.swing.JMenuItem();
@@ -50,10 +51,20 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ericp\\Downloads\\fondoLogin (1).jpg")); // NOI18N
 
         jMenu1.setText("File");
+
+        mItemCerrar.setText("Cerrar sesión");
+        mItemCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemCerrarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mItemCerrar);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
@@ -114,6 +125,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuClienteActionPerformed
 
+    private void mItemCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemCerrarActionPerformed
+        this.dispose();
+        JFrameLogin jFrameLogin = new JFrameLogin();
+    }//GEN-LAST:event_mItemCerrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -133,5 +149,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuProducto;
     private javax.swing.JMenuItem jMenuProveedor;
+    private javax.swing.JMenuItem mItemCerrar;
     // End of variables declaration//GEN-END:variables
 }

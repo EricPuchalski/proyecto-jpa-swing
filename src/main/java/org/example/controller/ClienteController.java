@@ -5,7 +5,7 @@ import org.example.service.ClienteService;
 
 import java.util.List;
 
-public class ClienteController implements CRUD<Cliente>{
+public class ClienteController{
 
     private final ClienteService clienteService;
 
@@ -13,8 +13,8 @@ public class ClienteController implements CRUD<Cliente>{
         this.clienteService = clienteService;
     }
 
-    public Cliente findOne(String cuit){
-        return clienteService.findOne(cuit);
+    public Cliente findOne(Long id){
+        return clienteService.findOne(id);
 
     }
 
@@ -23,14 +23,18 @@ public class ClienteController implements CRUD<Cliente>{
     }
 
 
-    public void delete(String cuit) {
-        clienteService.delete(cuit);
+    public void delete(Long id) {
+        clienteService.delete(id);
     }
 
     public  void create(Cliente cliente){
         clienteService.save(cliente);
     }
-    public void upDate(Cliente cliente) {
-        clienteService.upDate(cliente);
+    
+    public void edit(Cliente cliente){
+        clienteService.edit(cliente);
     }
+//    public void upDate(Cliente cliente) {
+//        clienteService.upDate(cliente);
+//    }
 }

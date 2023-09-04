@@ -10,6 +10,7 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFramePrincipal.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\TransportistaService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\TransportistaRepository.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\util\CargarDatos.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\RemitoRepository.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\LoginController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\exceptions\IllegalOrphanException.java
@@ -20,11 +21,13 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameLogin.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\InformeRepository.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\SectorRepository.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameL.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuProducto.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\ClienteController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameConsultaCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Producto.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\exceptions\PreexistingEntityException.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelModificarCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Pedido.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelConsultaCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuCliente.java
@@ -57,7 +60,9 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Informe.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\ClienteService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\EmpleadoService.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelL.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\exceptions\NonexistentEntityException.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameModificarCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Proveedor.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelCrearCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuPrincipal.java

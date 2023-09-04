@@ -30,7 +30,11 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.4.10.Final</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE180</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

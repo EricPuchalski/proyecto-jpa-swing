@@ -8,24 +8,24 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
 
-    MenuCliente menuCliente;
+//    MenuCliente menuCliente;
     MenuTransportista menuTransportista;
     MenuProducto menuProducto;
-    MenuPedido menuPedido;
-    MenuInforme menuInforme;
+//    MenuPedido menuPedido;
+//    MenuInforme menuInforme;
     MenuProveedor menuProveedor;
     MenuDeposito menuDeposito;
     private String opcion;
-
-    public MenuPrincipal(MenuCliente menuCliente, MenuTransportista menuTransportista, MenuProducto menuProducto, MenuPedido menuPedido,MenuInforme menuInforme,MenuProveedor menuProveedor, MenuDeposito menuDeposito) {
-        this.menuCliente = menuCliente;
-        this.menuTransportista = menuTransportista;
-        this.menuProducto = menuProducto;
-        this.menuPedido = menuPedido;
-        this.menuInforme=menuInforme;
-        this.menuProveedor=menuProveedor;
-        this.menuDeposito=menuDeposito;
-    }
+//
+//    public MenuPrincipal(MenuCliente menuCliente, MenuTransportista menuTransportista, MenuProducto menuProducto, MenuPedido menuPedido,MenuInforme menuInforme,MenuProveedor menuProveedor, MenuDeposito menuDeposito) {
+////        this.menuCliente = menuCliente;
+//        this.menuTransportista = menuTransportista;
+//        this.menuProducto = menuProducto;
+//        this.menuPedido = menuPedido;
+//        this.menuInforme=menuInforme;
+//        this.menuProveedor=menuProveedor;
+//        this.menuDeposito=menuDeposito;
+//    }
 
     public void mostrarMenuPrincipal() {
         Scanner scanner = new Scanner(System.in);
@@ -49,7 +49,7 @@ public class MenuPrincipal {
 
             switch (opcion) {
                 case "1":
-                    menuCliente.mostrarMenuCliente();
+//                    menuCliente.mostrarMenuCliente();
                     break;
                 case "2":
                     menuProveedor.mostrarMenuProveedor();
@@ -61,12 +61,12 @@ public class MenuPrincipal {
                     menuProducto.mostrarMenuProducto();
                     break;
                 case "5":
-                    menuPedido.mostrarMenuPedido();
+//                    menuPedido.mostrarMenuPedido();
                     break;
                 case "6":
                     menuDeposito.mostrarMenuDeposito();
                 case "7":
-                    menuInforme.mostrarMenuInforme();
+//                    menuInforme.mostrarMenuInforme();
                     break;
                 case "8":
                     System.out.println("Ha salido exitosamente");

@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 
-public class ClienteRepository implements CRUD<Cliente>{
+public class ClienteRepository{
 
     private List<Cliente> clientes;
     private boolean clienteExistente;
@@ -44,11 +44,8 @@ public class ClienteRepository implements CRUD<Cliente>{
         clientes.add(cliente);
     }
 
-    public void delete(String id) {
-        Cliente clienteExistente = findOne(id);
-        if (clienteExistente != null) {
-            clienteExistente.setEstado(Cliente.Estado.DESHABILITADO);
-        }
+    public void delete(Long id) {
+
     }
     public List<Cliente> findAll() {
         List<Cliente>clientesHabilitados = new ArrayList<>();

@@ -28,24 +28,25 @@ public class Main {
         PedidoRepository pediddoRepository = new PedidoRepository();
         PedidoService pedidoService = new PedidoService( pediddoRepository);
         PedidoController pedidoController = new PedidoController(pedidoService);
-        MenuCliente menuCliente = new MenuCliente(clienteController);
+//        MenuCliente menuCliente = new MenuCliente(clienteController);
         MenuTransportista menuTransportista = new MenuTransportista(transportistaController, pedidoController);
         MenuProducto menuProducto = new MenuProducto(productoController);
         EmpleadoRepository empleadoRepository=new EmpleadoRepository();
         EmpleadoService empleadoService=new EmpleadoService(empleadoRepository);
         EmpleadoController empleadoController=new EmpleadoController(empleadoService);
-        MenuPedido menuPedido=  new MenuPedido(pedidoController, depositoController, sectorRepository, transportistaController, productoController, clienteController,empleadoRepository,empleadoService,empleadoController);
+//        MenuPedido menuPedido=  new MenuPedido(pedidoController, depositoController, sectorRepository, transportistaController, productoController, clienteController,empleadoRepository,empleadoService,empleadoController);
         InformeRepository informeRepository=new InformeRepository(pediddoRepository, clienteRepository, productoRepository);
         InformeService informeService=new InformeService(informeRepository);
         InformeController informeController=new InformeController(informeService);
-        MenuInforme menuInforme=new MenuInforme(informeController, clienteController, pedidoController);
-        MenuDeposito menuDeposito=new MenuDeposito(depositoController);
+//        MenuInforme menuInforme=new MenuInforme(informeController, clienteController, pedidoController);
+//        MenuDeposito menuDeposito=new MenuDeposito(depositoController);
 
-        MenuPrincipal menuPrincipal = new MenuPrincipal(menuCliente, menuTransportista, menuProducto, menuPedido,menuInforme,new MenuProveedor(new ProveedorController(new ProveedorService(new ProveedorRepository()))),menuDeposito);
-
-        CargarDatos cDatos = new CargarDatos(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()));
-        cDatos.cargarDatos();
-        JFrameLogin frameLogin = new JFrameLogin();
+//        MenuPrincipal menuPrincipal = new MenuPrincipal(menuCliente, menuTransportista, menuProducto, menuPedido,menuInforme,new MenuProveedor(new ProveedorController(new ProveedorService(new ProveedorRepository()))),menuDeposito);
+//
+//        CargarDatos cDatos = new CargarDatos(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()));
+//        cDatos.cargarDatos();
+//        JFrameLogin frameLogin = new JFrameLogin();
+         JFrameLogin jFrameL = new JFrameLogin();
 
     }
 }
