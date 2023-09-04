@@ -1,6 +1,7 @@
 org\example\model\Proveedor.class
 org\example\repository\ProductoRepository.class
 org\example\view\JPanelLogin$4.class
+org\example\view\JPanelProveedor$4.class
 org\example\view\JFrameCrearCliente.class
 org\example\model\Deposito.class
 org\example\view\MenuPrincipal.class
@@ -8,6 +9,7 @@ org\example\dao\exceptions\IllegalOrphanException.class
 org\example\model\Transportista.class
 org\example\view\JPanelModificarCliente$4.class
 org\example\repository\DepositoRepository.class
+org\example\view\JFrameProveedor.class
 org\example\view\JPanelModificarCliente$1.class
 org\example\view\JPanelCliente$1.class
 org\example\view\JPanelConsultaCliente$1.class
@@ -46,6 +48,7 @@ org\example\repository\ClienteRepository.class
 org\example\view\JPanelConsultaCliente$4.class
 org\example\view\JPanelCrearCliente$6.class
 org\example\view\MenuDeposito.class
+org\example\view\JPanelProveedor$5.class
 org\example\model\Cliente.class
 org\example\service\EmpleadoService.class
 org\example\model\Empleado$Estado.class
@@ -76,17 +79,22 @@ org\example\model\Empleado.class
 org\example\view\JPanelCliente$2.class
 org\example\view\JPanelModificarCliente$3.class
 org\example\model\TipoTransportista.class
+org\example\dao\ProveedorJpaController.class
 org\example\dao\exceptions\NonexistentEntityException.class
 org\example\view\JPanelConsultaCliente$5.class
+org\example\view\JPanelProveedor.class
+org\example\view\JPanelProveedor$3.class
 org\example\controller\PedidoController.class
 org\example\view\JPanelModificarCliente$6.class
 org\example\model\Transportista$Estado.class
 org\example\view\JPanelLogin.class
+org\example\view\JPanelProveedor$2.class
 org\example\repository\EmpleadoRepository.class
 org\example\util\EntityManagerFactoryUTIL.class
 org\example\view\JPanelConsultaCliente.class
 org\example\dao\ClienteJpaController.class
 org\example\view\JPanelCrearCliente$3.class
+org\example\view\JFramePrincipal$3.class
 org\example\view\JFramePrincipal.class
 org\example\view\JPanelLogin$2.class
 org\example\model\Seguimiento.class
@@ -100,6 +108,7 @@ org\example\model\Sector.class
 org\example\controller\ProductoController.class
 org\example\view\JPanelCliente$3.class
 org\example\model\Producto$Estado.class
+org\example\view\JPanelProveedor$1.class
 org\example\service\DepositoService.class
 org\example\util\CargarDatos.class
 org\example\view\JPanelLogin$1.class

@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.controller.*;
 import org.example.dao.ClienteJpaController;
+import org.example.dao.ProveedorJpaController;
 import org.example.repository.*;
 import org.example.service.*;
 import org.example.util.CargarDatos;
@@ -43,10 +44,10 @@ public class Main {
 
 //        MenuPrincipal menuPrincipal = new MenuPrincipal(menuCliente, menuTransportista, menuProducto, menuPedido,menuInforme,new MenuProveedor(new ProveedorController(new ProveedorService(new ProveedorRepository()))),menuDeposito);
 //
-//        CargarDatos cDatos = new CargarDatos(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()));
-//        cDatos.cargarDatos();
-//        JFrameLogin frameLogin = new JFrameLogin();
-         JFrameLogin jFrameL = new JFrameLogin();
+        CargarDatos cDatos = new CargarDatos(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()),new ProveedorJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()));
+        cDatos.cargarDatos();
+        JFrameLogin frameLogin = new JFrameLogin();
+
 
     }
 }
