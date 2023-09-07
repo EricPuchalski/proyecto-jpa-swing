@@ -8,9 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import org.example.controller.ClienteController;
+import org.example.dao.ClienteJpaController;
 import org.example.model.Cliente;
 import org.example.repository.ClienteRepository;
 import org.example.service.ClienteService;
+import org.example.util.EntityManagerFactoryUTIL;
 
 /**
  *
@@ -24,7 +26,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
      * Creates new form JPanelCrearCliente
      */
     public JPanelModificarCliente(Long id) {
-        this.clienteController = new ClienteController(new ClienteService(new ClienteRepository()));
+        this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
         this.id = id;
         initComponents();
         this.setSize(800,700);
@@ -56,6 +58,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
         btnModificar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(34, 131, 210));
         addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 formAncestorAdded(evt);

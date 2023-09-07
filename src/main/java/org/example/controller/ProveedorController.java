@@ -5,15 +5,15 @@ import org.example.service.ProveedorService;
 
 import java.util.List;
 
-public class ProveedorController implements CRUD<Proveedor> {
+public class ProveedorController {
     private final ProveedorService proveedorService;
 
     public ProveedorController(ProveedorService proveedorService) {
         this.proveedorService = proveedorService;
     }
 
-    public Proveedor findOne(String cuit) {
-        return proveedorService.findOne(cuit);
+    public Proveedor findOne(Long id) {
+        return proveedorService.findOne(id);
     }
 
     public List<Proveedor> findAll() {
@@ -21,8 +21,8 @@ public class ProveedorController implements CRUD<Proveedor> {
     }
 
 
-    public void delete(String cuit) {
-        proveedorService.delete(cuit);
+    public void delete(Long id) {
+        proveedorService.delete(id);
     }
 
     public void create(Proveedor proveedor) {

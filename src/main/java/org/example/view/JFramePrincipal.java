@@ -89,6 +89,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenu3.add(jMenuProveedor);
 
         jMenuProducto.setText("Producto");
+        jMenuProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuProductoActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuProducto);
 
         jMenuItem2.setText("Deposito");
@@ -139,6 +144,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         this.dispose();
         JFrameProveedor jFrameProveedor = new JFrameProveedor();
     }//GEN-LAST:event_jMenuProveedorActionPerformed
+
+    private void jMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuProductoActionPerformed
+                this.dispose();
+        JFrameProducto jFrameProducto = new JFrameProducto();
+    }//GEN-LAST:event_jMenuProductoActionPerformed
 
     /**
      * @param args the command line arguments

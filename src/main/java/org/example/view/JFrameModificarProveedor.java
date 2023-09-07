@@ -8,19 +8,20 @@ package org.example.view;
  *
  * @author ericp
  */
-public class JFrameProveedor extends javax.swing.JFrame {
-
+public class JFrameModificarProveedor extends javax.swing.JFrame {
+    private Long id;
     /**
-     * Creates new form JFrameProveedor
+     * Creates new form JFrameModificarProveedor
      */
-    public JFrameProveedor() {
+    public JFrameModificarProveedor(Long id) {
+        initComponents();
+         this.id = id;
         initComponents();
         this.setSize(800,700);
         this.setLocationRelativeTo(null);
-        JPanelProveedor jPanelProveedor = new JPanelProveedor();
-        this.add(jPanelProveedor);
+        JPanelModificarProveedor jPanelModificarProveedor = new JPanelModificarProveedor(this.id);
+        this.add(jPanelModificarProveedor);
         this.setVisible(true);
-        
     }
 
     /**
@@ -33,7 +34,6 @@ public class JFrameProveedor extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

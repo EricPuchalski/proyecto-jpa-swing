@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import org.example.util.EntityManagerFactoryUTIL;
 
 /**
  *
@@ -26,7 +27,7 @@ public class JPanelConsultaCliente extends javax.swing.JPanel {
      * Creates new form JPanelConsultaCliente
      */
     public JPanelConsultaCliente() {
-        clienteController = new ClienteController(new ClienteService(new ClienteRepository()));
+        clienteController = new ClienteController(new ClienteService(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
         initComponents();
         this.setSize(800,600);
     }

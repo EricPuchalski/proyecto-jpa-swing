@@ -5,6 +5,8 @@
 package org.example.view;
 
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -17,7 +19,7 @@ public class JPanelProveedor extends javax.swing.JPanel {
      */
     public JPanelProveedor() {
         initComponents();
-        this.setSize(800,600);
+        this.setSize(800,700);
     }
 
     /**
@@ -63,9 +65,9 @@ public class JPanelProveedor extends javax.swing.JPanel {
             }
         });
 
-        btnClose.setBackground(new java.awt.Color(0, 0, 102));
+        btnClose.setBackground(new java.awt.Color(217, 74, 51));
         btnClose.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        btnClose.setForeground(new java.awt.Color(0, 195, 225));
+        btnClose.setForeground(new java.awt.Color(204, 255, 255));
         btnClose.setText("SALIR");
         btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -74,6 +76,11 @@ public class JPanelProveedor extends javax.swing.JPanel {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnCloseMouseExited(evt);
+            }
+        });
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -142,13 +149,19 @@ public class JPanelProveedor extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        // TODO add your handling code here:
+        JFrameCrearProveedor jFrameCrearProveedor = new JFrameCrearProveedor();
+      this.closeFrame();
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
-        // TODO add your handling code here:
+        JFrameConsultaProveedor jFrameConsultaProveedor = new JFrameConsultaProveedor();
+        this.closeFrame();
+       
     }//GEN-LAST:event_btnConsultActionPerformed
-
+    private void closeFrame(){
+        JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
+        contenedor.dispose();
+    }
     private void btnCreateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateMouseEntered
         btnCreate.setBackground(new Color(0,0,170));
     }//GEN-LAST:event_btnCreateMouseEntered
@@ -158,7 +171,7 @@ public class JPanelProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnConsultMouseEntered
 
     private void btnCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseEntered
-        btnClose.setBackground(new Color(0,0,170));
+        btnClose.setBackground(new Color(217,74,100));
     }//GEN-LAST:event_btnCloseMouseEntered
 
     private void btnCreateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateMouseExited
@@ -170,8 +183,13 @@ public class JPanelProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnConsultMouseExited
 
     private void btnCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseExited
-        btnClose.setBackground(new Color(0,0,102));
+        btnClose.setBackground(new Color(217,74,51));
     }//GEN-LAST:event_btnCloseMouseExited
+
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+         this.closeFrame();
+        JFramePrincipal jFramePrincipal = new JFramePrincipal();
+    }//GEN-LAST:event_btnCloseActionPerformed
   
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

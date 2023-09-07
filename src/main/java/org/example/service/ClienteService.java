@@ -14,10 +14,10 @@ import java.util.logging.Logger;
 
 public class  ClienteService{
     private ClienteRepository clienteRepository;
-    ClienteJpaController clienteJpaController = new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory());
+    ClienteJpaController clienteJpaController;
 
-    public ClienteService(ClienteRepository clienteRepository ){
-        this.clienteRepository = clienteRepository;
+    public ClienteService(ClienteJpaController clienteJpaController ){
+        this.clienteJpaController = clienteJpaController;
 
     }
     public void save(Cliente cliente){

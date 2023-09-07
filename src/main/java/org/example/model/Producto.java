@@ -31,7 +31,6 @@ public class Producto {
         this.peso = peso;
         this.categoria = categoria;
         this.proveedor = proveedor;
-        this.habilitado = isHabilitado();
         this.estado = Estado.HABILITADO;
     }
 

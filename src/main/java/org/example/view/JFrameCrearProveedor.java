@@ -8,18 +8,18 @@ package org.example.view;
  *
  * @author ericp
  */
-public class JFrameProveedor extends javax.swing.JFrame {
+public class JFrameCrearProveedor extends javax.swing.JFrame {
 
     /**
-     * Creates new form JFrameProveedor
+     * Creates new form JFrameCrearProveedor
      */
-    public JFrameProveedor() {
+    public JFrameCrearProveedor() {
         initComponents();
-        this.setSize(800,700);
-        this.setLocationRelativeTo(null);
-        JPanelProveedor jPanelProveedor = new JPanelProveedor();
-        this.add(jPanelProveedor);
-        this.setVisible(true);
+       this.setSize(800,700);
+       this.setLocationRelativeTo(this);
+       JPanelCrearProveedor jPanelCrearProveedor = new JPanelCrearProveedor();
+       this.add(jPanelCrearProveedor);
+      this.setVisible(true);
         
     }
 
@@ -33,7 +33,6 @@ public class JFrameProveedor extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -48,6 +47,7 @@ public class JFrameProveedor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
