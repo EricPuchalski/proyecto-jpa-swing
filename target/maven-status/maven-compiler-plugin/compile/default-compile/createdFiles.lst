@@ -1,3 +1,4 @@
+org\example\controller\CategoriaProductoController.class
 org\example\model\Proveedor.class
 org\example\view\JPanelLogin$4.class
 org\example\view\JPanelModificarProveedor$5.class
@@ -11,6 +12,7 @@ org\example\view\JPanelModificarCliente$4.class
 org\example\repository\DepositoRepository.class
 org\example\view\JFrameProveedor.class
 org\example\view\JPanelModificarCliente$1.class
+org\example\service\CategoriaProductoService.class
 org\example\view\JPanelCliente$1.class
 org\example\view\JPanelConsultaCliente$1.class
 org\example\view\JPanelModificarProveedor$8.class
@@ -64,6 +66,7 @@ org\example\service\EmpleadoService.class
 org\example\model\Empleado$Estado.class
 org\example\model\Producto.class
 org\example\view\JFrameConsultaCliente.class
+org\example\dao\CategoriaProductoJpaController.class
 org\example\view\JPanelModificarCliente$2.class
 org\example\view\JPanelModificarProveedor$4.class
 org\example\view\JFrameModificarProveedor.class
@@ -90,6 +93,7 @@ org\example\view\JPanelConsultaCliente$2.class
 org\example\repository\CRUD.class
 org\example\view\JPanelLogin$3.class
 org\example\model\LineaPedido.class
+org\example\view\JFrameCrearProducto$1.class
 org\example\view\JPanelModificarProveedor$6.class
 org\example\model\Empleado.class
 org\example\view\JPanelCliente$2.class
@@ -109,6 +113,7 @@ org\example\view\JPanelLogin.class
 org\example\view\JPanelCrearProveedor$4.class
 org\example\view\JPanelProveedor$2.class
 org\example\repository\EmpleadoRepository.class
+org\example\view\JFrameCrearProducto.class
 org\example\util\EntityManagerFactoryUTIL.class
 org\example\view\JPanelConsultaCliente.class
 org\example\view\JPanelProducto$3.class
@@ -131,6 +136,7 @@ org\example\model\Producto$Estado.class
 org\example\view\JPanelCrearProveedor$5.class
 org\example\view\JPanelProveedor$1.class
 org\example\service\DepositoService.class
+org\example\view\JPanelCrearProducto.class
 org\example\view\JPanelModificarProveedor$7.class
 org\example\view\JPanelModificarProveedor.class
 org\example\util\CargarDatos.class

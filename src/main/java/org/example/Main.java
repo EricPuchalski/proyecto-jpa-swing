@@ -3,6 +3,7 @@ package org.example;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import org.example.controller.*;
+import org.example.dao.CategoriaProductoJpaController;
 import org.example.dao.ClienteJpaController;
 import org.example.dao.ProveedorJpaController;
 import org.example.repository.*;
@@ -47,7 +48,7 @@ public class Main {
 //        MenuPrincipal menuPrincipal = new MenuPrincipal(menuCliente, menuTransportista, menuProducto, menuPedido,menuInforme,new MenuProveedor(new ProveedorController(new ProveedorService(new ProveedorRepository()))),menuDeposito);
 //
         EntityManagerFactory emf = EntityManagerFactoryUTIL.getEntityManagerFactory();
-        CargarDatos cDatos = new CargarDatos(new ClienteJpaController(emf),new ProveedorJpaController(emf));
+        CargarDatos cDatos = new CargarDatos(new ClienteJpaController(emf),new ProveedorJpaController(emf), new CategoriaProductoJpaController(emf));
         cDatos.cargarDatos();
         JFrameLogin frameLogin = new JFrameLogin();
 
