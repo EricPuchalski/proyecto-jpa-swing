@@ -13,6 +13,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import org.example.dao.exceptions.NonexistentEntityException;
+import org.example.model.Producto;
 import org.example.model.Proveedor;
 
 /**
@@ -81,26 +82,37 @@ public class ProveedorJpaController implements Serializable {
         }
     }
 
-    public void destroy(Long id) throws NonexistentEntityException {
-        EntityManager em = null;
+public void destroy(Long id) throws NonexistentEntityException {
+    EntityManager em = null;
+    try {
+        em = getEntityManager();
+        em.getTransaction().begin();
+        
+        Proveedor proveedor;
         try {
-            em = getEntityManager();
-            em.getTransaction().begin();
-            Proveedor proveedor;
-            try {
-                proveedor = em.getReference(Proveedor.class, id);
-                proveedor.getId();
-            } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The proveedor with id " + id + " no longer exists.", enfe);
-            }
-            em.remove(proveedor);
-            em.getTransaction().commit();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
+            proveedor = em.getReference(Proveedor.class, id);
+            proveedor.getId();
+        } catch (EntityNotFoundException enfe) {
+            throw new NonexistentEntityException("The proveedor with id " + id + " no longer exists.", enfe);
+        }
+        
+        // Elimina todos los productos asociados al proveedor en una sola transacción
+        Query query = em.createQuery("DELETE FROM Producto p WHERE p.proveedor.id = :proveedorId");
+        query.setParameter("proveedorId", id);
+        query.executeUpdate();
+        
+        // Finalmente, elimina el proveedor
+        em.remove(proveedor);
+        
+        em.getTransaction().commit();
+    } finally {
+        if (em != null) {
+            em.close();
         }
     }
+}
+
+
 
     public List<Proveedor> findProveedorEntities() {
         return findProveedorEntities(true, -1, -1);

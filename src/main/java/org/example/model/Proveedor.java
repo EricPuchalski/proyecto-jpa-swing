@@ -7,8 +7,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="proveedores")
 public class Proveedor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,12 +45,8 @@ public class Proveedor implements Serializable {
 
     @Override
     public String toString() {
-        return "cuit: " + cuit + '\'' +
-                ", nombre: " + nombre + '\'' +
-                ", direccion: " + direccion + '\'' +
-                ", telefono: " + telefono + '\'' +
-                ", email: " + email + '\'' +
-                ", estado: " + estado;
+        return nombre;
+
     }
 
     public Long getId() {
@@ -107,6 +105,7 @@ public class Proveedor implements Serializable {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
+    
     
     
 }

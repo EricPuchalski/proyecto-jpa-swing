@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import org.example.controller.ClienteController;
+import org.example.controller.JFrameController;
 import org.example.dao.ClienteJpaController;
 import org.example.model.Cliente;
 import org.example.repository.ClienteRepository;
@@ -26,7 +27,7 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
     public JPanelCrearCliente( ) {
         this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
         initComponents();
-        this.setSize(800,700);
+         this.setSize(785,700);
     }
 
     /**
@@ -37,7 +38,6 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -55,82 +55,34 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
         btnRegister = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(34, 131, 210));
-        setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 2, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 204, 255));
         jLabel1.setText("Por favor ingrese los datos requeridos");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.insets = new java.awt.Insets(18, 175, 0, 0);
-        add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(232, 245, 255));
         jLabel2.setText("REGISTRAR CLIENTE");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(61, 140, 1, 140);
-        add(jLabel2, gridBagConstraints);
 
         lblName.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         lblName.setForeground(new java.awt.Color(204, 255, 255));
         lblName.setText("Nombre");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 149, 0, 0);
-        add(lblName, gridBagConstraints);
 
         lblSurname.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         lblSurname.setForeground(new java.awt.Color(204, 255, 255));
         lblSurname.setText("Apellido");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 149, 0, 0);
-        add(lblSurname, gridBagConstraints);
 
         lblCuit.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         lblCuit.setForeground(new java.awt.Color(204, 255, 255));
         lblCuit.setText("Cuit");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 149, 0, 0);
-        add(lblCuit, gridBagConstraints);
 
         lblTel.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         lblTel.setForeground(new java.awt.Color(204, 255, 255));
         lblTel.setText("Telefono");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 149, 0, 0);
-        add(lblTel, gridBagConstraints);
 
         lblAdress.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         lblAdress.setForeground(new java.awt.Color(204, 255, 255));
         lblAdress.setText("Dirección");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 149, 0, 0);
-        add(lblAdress, gridBagConstraints);
 
         txtName.setBackground(new java.awt.Color(34, 131, 210));
         txtName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -142,15 +94,6 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
                 txtNameActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 12;
-        gridBagConstraints.ipadx = 393;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 149, 0, 0);
-        add(txtName, gridBagConstraints);
 
         txtAdress.setBackground(new java.awt.Color(34, 131, 210));
         txtAdress.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
@@ -160,15 +103,6 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
                 txtAdressActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 12;
-        gridBagConstraints.ipadx = 393;
-        gridBagConstraints.ipady = 11;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 149, 0, 0);
-        add(txtAdress, gridBagConstraints);
 
         txtSurname.setBackground(new java.awt.Color(34, 131, 210));
         txtSurname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
@@ -178,15 +112,6 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
                 txtSurnameActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 12;
-        gridBagConstraints.ipadx = 393;
-        gridBagConstraints.ipady = 11;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 149, 0, 0);
-        add(txtSurname, gridBagConstraints);
 
         txtTel.setBackground(new java.awt.Color(34, 131, 210));
         txtTel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
@@ -196,15 +121,6 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
                 txtTelActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 12;
-        gridBagConstraints.ipadx = 393;
-        gridBagConstraints.ipady = 11;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 149, 0, 0);
-        add(txtTel, gridBagConstraints);
 
         txtCuit.setBackground(new java.awt.Color(34, 131, 210));
         txtCuit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
@@ -214,15 +130,6 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
                 txtCuitActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 12;
-        gridBagConstraints.ipadx = 393;
-        gridBagConstraints.ipady = 11;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 149, 0, 0);
-        add(txtCuit, gridBagConstraints);
 
         btnCancel.setBackground(new java.awt.Color(204, 0, 0));
         btnCancel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -233,15 +140,6 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
                 btnCancelActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 106;
-        gridBagConstraints.ipady = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(39, 27, 67, 0);
-        add(btnCancel, gridBagConstraints);
 
         btnRegister.setBackground(new java.awt.Color(0, 102, 255));
         btnRegister.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -252,15 +150,73 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
                 btnRegisterActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 102;
-        gridBagConstraints.ipady = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(39, 149, 67, 0);
-        add(btnRegister, gridBagConstraints);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(lblName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblSurname)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblAdress)
+                                .addComponent(txtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblCuit)
+                                .addComponent(txtCuit, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblTel)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtTel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(141, 141, 141))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(31, 31, 31)
+                .addComponent(lblName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblSurname)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblAdress)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblCuit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCuit, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(134, 134, 134))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -284,22 +240,23 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_txtCuitActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        this.volverPanelCLiente();
+        JFrameController.cambiarPanel(this, new JPanelCliente(), this);
 
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+        if(!(txtName.getText().isEmpty()|| txtSurname.getText().isEmpty() || txtAdress.getText().isEmpty() || txtTel.getText().isEmpty() || txtCuit.getText().isEmpty())){
+            clienteController.create(new Cliente(txtCuit.getText(), txtName.getText(), txtSurname.getText(),txtAdress.getText(),txtTel.getText()));
+            JOptionPane.showMessageDialog(this, "Usuario creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
+            JFrameController.cambiarPanel(this, new JPanelCliente(), this);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
 
-        clienteController.create(new Cliente(txtCuit.getText(), txtName.getText(), txtSurname.getText(),txtAdress.getText(),txtTel.getText()));
-        JOptionPane.showMessageDialog(this, "Usuario creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
-        this.volverPanelCLiente();
        
     }//GEN-LAST:event_btnRegisterActionPerformed
-    private void volverPanelCLiente(){
-    JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-    contenedor.dispose();
-    JFrameCliente jFrameCliente = new JFrameCliente();
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;

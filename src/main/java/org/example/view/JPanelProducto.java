@@ -6,6 +6,7 @@ package org.example.view;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import org.example.controller.JFrameController;
 
 /**
  *
@@ -31,44 +32,44 @@ public class JPanelProducto extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSalir = new javax.swing.JButton();
-        btnConsulta = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
+        btnConsult = new javax.swing.JButton();
+        btnCreate = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(34, 131, 210));
 
-        btnSalir.setBackground(new java.awt.Color(217, 74, 51));
-        btnSalir.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(204, 255, 255));
-        btnSalir.setText("SALIR");
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setBackground(new java.awt.Color(217, 74, 51));
+        btnClose.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnClose.setForeground(new java.awt.Color(204, 255, 255));
+        btnClose.setText("SALIR");
+        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
-        btnConsulta.setBackground(new java.awt.Color(0, 0, 102));
-        btnConsulta.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        btnConsulta.setForeground(new java.awt.Color(0, 195, 225));
-        btnConsulta.setText("CONSULTAR,MODIFICAR,ELIMINAR");
-        btnConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnConsulta.addActionListener(new java.awt.event.ActionListener() {
+        btnConsult.setBackground(new java.awt.Color(0, 0, 102));
+        btnConsult.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnConsult.setForeground(new java.awt.Color(0, 195, 225));
+        btnConsult.setText("CONSULTAR,MODIFICAR,ELIMINAR");
+        btnConsult.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConsult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultaActionPerformed(evt);
+                btnConsultActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 102));
-        jButton1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 195, 225));
-        jButton1.setText("CREAR PRODUCTO");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.setBackground(new java.awt.Color(0, 0, 102));
+        btnCreate.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(0, 195, 225));
+        btnCreate.setText("CREAR PRODUCTO");
+        btnCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
 
@@ -89,9 +90,9 @@ public class JPanelProducto extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnConsult, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4))
                         .addGap(30, 30, 30)))
                 .addContainerGap(148, Short.MAX_VALUE))
@@ -104,36 +105,31 @@ public class JPanelProducto extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
-                .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnConsult, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(200, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.closeFrame();
-        JFramePrincipal jFramePrincipal = new JFramePrincipal();
-    }//GEN-LAST:event_btnSalirActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        JFrameController.cambiarPanel(this, new JPanelPrincipal(), this);
+    }//GEN-LAST:event_btnCloseActionPerformed
 
-    private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
-        this.closeFrame();
-    }//GEN-LAST:event_btnConsultaActionPerformed
+    private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
+        JFrameController.cambiarPanel(this, new JPanelConsultaProducto(), this);
+    }//GEN-LAST:event_btnConsultActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+       JFrameController.cambiarPanel(this,new JPanelCrearProducto(), this);
+    }//GEN-LAST:event_btnCreateActionPerformed
 
-        this.closeFrame();
-    }//GEN-LAST:event_jButton1ActionPerformed
-    private void closeFrame(){
-         JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-        contenedor.dispose();
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConsulta;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnConsult;
+    private javax.swing.JButton btnCreate;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables

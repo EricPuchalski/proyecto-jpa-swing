@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+import org.example.controller.JFrameController;
 import org.example.controller.ProveedorController;
 import org.example.dao.ProveedorJpaController;
 import org.example.model.Proveedor;
@@ -27,7 +28,7 @@ public class JPanelConsultaProveedor extends javax.swing.JPanel {
     public JPanelConsultaProveedor() {
         this.proveedorController = new ProveedorController(new ProveedorService(new ProveedorJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
         initComponents();
-        this.setSize(800,700);
+        this.setSize(785,700);
     }
 
     /**
@@ -98,7 +99,7 @@ public class JPanelConsultaProveedor extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(34, 131, 210));
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -155,26 +156,23 @@ public class JPanelConsultaProveedor extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(103, 103, 103)
                 .addComponent(jLabel1)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(102, 102, 102)
+                .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
        this.cargarTabla();
     }//GEN-LAST:event_formAncestorAdded
-    private void cambiarFrame(){
-        JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-        contenedor.dispose();
-    }
+
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
                                             
         if(jTable1.getRowCount() > 0){
@@ -187,8 +185,7 @@ public class JPanelConsultaProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        cambiarFrame();
-        JFrameProveedor jFrameProveedor = new JFrameProveedor();
+        JFrameController.cambiarPanel(this, new JPanelProveedor(), this);
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
@@ -196,8 +193,7 @@ public class JPanelConsultaProveedor extends javax.swing.JPanel {
             if(jTable1.getSelectedRow()!=-1){
                 JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
                 Long idProveedor = Long.parseLong(String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(),0)));
-                JFrameModificarProveedor jFrameModificarProveedor = new JFrameModificarProveedor(idProveedor);
-                contenedor.dispose();
+                JFrameController.cambiarPanel(this, new JPanelModificarProveedor(idProveedor), this);
             }
         }        // TODO add your handling code here:
     }//GEN-LAST:event_btnModifyActionPerformed

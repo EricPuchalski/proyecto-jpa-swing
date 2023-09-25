@@ -7,6 +7,7 @@ package org.example.view;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import org.example.controller.JFrameController;
 import org.example.controller.ProveedorController;
 import org.example.dao.ProveedorJpaController;
 import org.example.model.Proveedor;
@@ -267,7 +268,7 @@ public class JPanelModificarProveedor extends javax.swing.JPanel {
         p.setTelefono(txtTel.getText());
         proveedorController.upDate(p);
         JOptionPane.showMessageDialog(null, "Proveedor modificado con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        this.cambiarFrame();
+        JFrameController.cambiarPanel(this, new JPanelConsultaProveedor(), this);
 
         } else{
             JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -275,7 +276,7 @@ public class JPanelModificarProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnModifyActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        this.cambiarFrame();
+        JFrameController.cambiarPanel(this, new JPanelConsultaProveedor(), this);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
@@ -301,11 +302,7 @@ public class JPanelModificarProveedor extends javax.swing.JPanel {
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         cargarDatos(id); 
     }//GEN-LAST:event_formAncestorAdded
-    private void cambiarFrame(){
-                JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-        contenedor.dispose();
-                JFrameConsultaProveedor jFrameConsultaProveedor = new JFrameConsultaProveedor();
-    }
+
     public void cargarDatos(Long id){
         p = proveedorController.findOne(id);
         txtCuit.setText(p.getCuit());

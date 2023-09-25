@@ -1,10 +1,9 @@
 package org.example.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import javax.persistence.Embeddable;
 
-@Getter
-@Setter
+@Embeddable
+
 
 public class Posicion {
     private double latitud;
@@ -16,6 +15,10 @@ public class Posicion {
         this.longitud = longitud;
     }
 
+    public Posicion() {
+    }
+    
+
     @Override
     public String toString() {
         return "Posicion{" +
@@ -23,4 +26,21 @@ public class Posicion {
                 ", longitud=" + longitud +
                 '}';
     }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
+    }
+    
 }

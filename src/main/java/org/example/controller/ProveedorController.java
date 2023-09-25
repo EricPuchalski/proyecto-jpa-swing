@@ -33,4 +33,14 @@ public class ProveedorController {
         proveedorService.upDate(proveedor);
     }
 
+        public Proveedor  findByName(String nombre){
+        Proveedor pEncontrado = null;
+        for(Proveedor p: this.findAll()){
+             if (p.getNombre().equals(nombre) ) {
+                pEncontrado = p;
+            } 
+        }
+
+        return pEncontrado;
+    }
 }

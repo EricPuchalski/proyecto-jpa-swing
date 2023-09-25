@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="categorias_productos")
 public class CategoriaProducto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,8 +42,6 @@ public class CategoriaProducto implements Serializable {
     
     @Override
     public String toString() {
-        return "CategoriaProducto{" +
-                "nombre='" + nombre + '\'' +
-                '}';
+        return nombre;
     }
 }

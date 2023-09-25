@@ -7,6 +7,7 @@ package org.example.view;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import org.example.controller.JFrameController;
 import org.example.controller.ProveedorController;
 import org.example.dao.ProveedorJpaController;
 import org.example.model.Proveedor;
@@ -27,7 +28,7 @@ public class JPanelCrearProveedor extends javax.swing.JPanel {
         this.proveedorController = new ProveedorController(new ProveedorService(new ProveedorJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
         initComponents();
         
-        this.setSize(800,700);
+        this.setSize(785,700);
     }
 
     /**
@@ -293,19 +294,21 @@ public class JPanelCrearProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTelActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-
+        if(!(txtName.getText().isEmpty()|| txtMail.getText().isEmpty() || txtAdress.getText().isEmpty() || txtTel.getText().isEmpty() || txtCuit.getText().isEmpty())){
         proveedorController.create(new Proveedor(txtCuit.getText(), txtName.getText(),txtAdress.getText(), txtMail.getText(),txtTel.getText()));
         JOptionPane.showMessageDialog(this, "Proveedor creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
         this.volverPanelProveedor();
+        }else{
+            JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.volverPanelProveedor();
     }//GEN-LAST:event_btnCancelActionPerformed
     private void volverPanelProveedor(){
-    JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-    contenedor.dispose();
-    JFrameProveedor jFrameProveedor = new JFrameProveedor();
+        JFrameController.cambiarPanel(this, new JPanelProveedor(), this);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

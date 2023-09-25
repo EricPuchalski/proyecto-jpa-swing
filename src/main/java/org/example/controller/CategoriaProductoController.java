@@ -23,4 +23,13 @@ public class CategoriaProductoController {
         return categoriaProductoService.findAll();
     }
     
+    public CategoriaProducto  findByName(String nombre){
+        CategoriaProducto cPEncontrado = null;
+        for(CategoriaProducto cP: this.findAll())
+            if (cP.getNombre().equals(nombre) ) {
+                cPEncontrado = cP;
+        }
+        return cPEncontrado;
+    }
+    
 }

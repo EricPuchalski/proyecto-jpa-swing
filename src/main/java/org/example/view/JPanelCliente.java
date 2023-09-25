@@ -6,6 +6,7 @@ package org.example.view;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import org.example.controller.JFrameController;
 
 /**
  *
@@ -18,7 +19,7 @@ public class JPanelCliente extends javax.swing.JPanel {
      */
     public JPanelCliente() {
         initComponents();
-        this.setSize(800,600);
+        this.setSize(785,700);
     }
 
     /**
@@ -93,12 +94,13 @@ public class JPanelCliente extends javax.swing.JPanel {
                         .addGap(181, 181, 181)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(btnSalir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnConsulta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(15, 15, 15))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(230, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,36 +109,29 @@ public class JPanelCliente extends javax.swing.JPanel {
                 .addGap(60, 60, 60)
                 .addComponent(jLabel1)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGap(60, 60, 60)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(33, 33, 33)
                 .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(34, 34, 34)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-    JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-     JFrameCrearCliente jFrameCrearCliente = new JFrameCrearCliente();
-     contenedor.dispose();
+        JFrameController.cambiarPanel(this, new JPanelCrearCliente(),this);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
-    JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-    contenedor.dispose();
-    JFrameConsultaCliente jFrameConsultaCliente = new JFrameConsultaCliente();
+        JFrameController.cambiarPanel(this, new JPanelConsultaCliente(),this);
     }//GEN-LAST:event_btnConsultaActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-    JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-    contenedor.dispose();
-    JFramePrincipal jFramePrincipal = new JFramePrincipal();
+        JFrameController.cambiarPanel(this, new JPanelPrincipal(), this);
     }//GEN-LAST:event_btnSalirActionPerformed
 
 

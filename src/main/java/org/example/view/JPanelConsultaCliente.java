@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import org.example.controller.JFrameController;
 import org.example.util.EntityManagerFactoryUTIL;
 
 /**
@@ -29,7 +30,7 @@ public class JPanelConsultaCliente extends javax.swing.JPanel {
     public JPanelConsultaCliente() {
         clienteController = new ClienteController(new ClienteService(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
         initComponents();
-        this.setSize(800,600);
+        this.setSize(785,700);
     }
 
 
@@ -45,6 +46,7 @@ public class JPanelConsultaCliente extends javax.swing.JPanel {
         btnSalir = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(34, 131, 210));
         addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 formAncestorAdded(evt);
@@ -151,9 +153,7 @@ public class JPanelConsultaCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_formAncestorAdded
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-     JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-    contenedor.dispose();
-    JFrameCliente jFrameCliente = new JFrameCliente();
+        JFrameController.cambiarPanel(this, new JPanelCliente(), this);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -170,10 +170,8 @@ public class JPanelConsultaCliente extends javax.swing.JPanel {
 
         if(tblClientes.getRowCount() > 0){
             if(tblClientes.getSelectedRow()!=-1){
-                JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
                 Long idCliente = Long.parseLong(String.valueOf(tblClientes.getValueAt(tblClientes.getSelectedRow(),0)));
-                JFrameModificarCliente jFrameModificarCliente = new JFrameModificarCliente(idCliente);
-                contenedor.dispose();
+                JFrameController.cambiarPanel(this, new JPanelModificarCliente(idCliente), this);
             }
         }
     }//GEN-LAST:event_btnModificarActionPerformed

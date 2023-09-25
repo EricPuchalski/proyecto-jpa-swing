@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import org.example.controller.ClienteController;
+import org.example.controller.JFrameController;
 import org.example.dao.ClienteJpaController;
 import org.example.model.Cliente;
 import org.example.repository.ClienteRepository;
@@ -29,7 +30,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
         this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
         this.id = id;
         initComponents();
-        this.setSize(800,700);
+        this.setSize(785,700);
    
     }
 
@@ -129,6 +130,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
         btnCancel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancelar");
+        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -139,6 +141,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
         btnModificar.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnModificar.setForeground(new java.awt.Color(255, 255, 255));
         btnModificar.setText("Modificar");
+        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
@@ -255,9 +258,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_txtCuitActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-    JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-    contenedor.dispose();
-    JFrameConsultaCliente jFrameConsultaCliente = new JFrameConsultaCliente();
+        JFrameController.cambiarPanel(this, new JPanelConsultaCliente(), this);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -269,9 +270,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
         cl.setTelefono(txtTel.getText());
         clienteController.edit(cl);
         JOptionPane.showMessageDialog(null, "Cliente modificado con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-        contenedor.dispose();
-        JFrameConsultaCliente jFrameConsultaCliente = new JFrameConsultaCliente(); 
+        JFrameController.cambiarPanel(this, new JPanelConsultaCliente(), this);
         } else{
             JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }

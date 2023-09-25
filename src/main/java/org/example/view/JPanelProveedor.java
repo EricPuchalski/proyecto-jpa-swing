@@ -7,6 +7,7 @@ package org.example.view;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import org.example.controller.JFrameController;
 
 /**
  *
@@ -19,7 +20,7 @@ public class JPanelProveedor extends javax.swing.JPanel {
      */
     public JPanelProveedor() {
         initComponents();
-        this.setSize(800,700);
+        this.setSize(800,670);
     }
 
     /**
@@ -149,19 +150,13 @@ public class JPanelProveedor extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        JFrameCrearProveedor jFrameCrearProveedor = new JFrameCrearProveedor();
-      this.closeFrame();
+        JFrameController.cambiarPanel(this, new JPanelCrearProveedor(), this);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
-        JFrameConsultaProveedor jFrameConsultaProveedor = new JFrameConsultaProveedor();
-        this.closeFrame();
-       
+          JFrameController.cambiarPanel(this, new JPanelConsultaProveedor(), this);
     }//GEN-LAST:event_btnConsultActionPerformed
-    private void closeFrame(){
-        JFrame contenedor = (JFrame) SwingUtilities.getWindowAncestor(this);
-        contenedor.dispose();
-    }
+
     private void btnCreateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateMouseEntered
         btnCreate.setBackground(new Color(0,0,170));
     }//GEN-LAST:event_btnCreateMouseEntered
@@ -187,8 +182,7 @@ public class JPanelProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCloseMouseExited
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-         this.closeFrame();
-        JFramePrincipal jFramePrincipal = new JFramePrincipal();
+        JFrameController.cambiarPanel(this, new JPanelPrincipal(), this);
     }//GEN-LAST:event_btnCloseActionPerformed
   
    

@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package org.example.view;
 
@@ -8,20 +8,14 @@ package org.example.view;
  *
  * @author ericp
  */
-public class JFrameModificarProveedor extends javax.swing.JFrame {
-    private Long id;
+public class JPanelModificarTransportista extends javax.swing.JPanel {
+
     /**
-     * Creates new form JFrameModificarProveedor
+     * Creates new form JPanelModificarTransportista
      */
-    public JFrameModificarProveedor(Long id) {
-        initComponents();
-         this.id = id;
-        initComponents();
+    public JPanelModificarTransportista() {
         this.setSize(800,700);
-        this.setLocationRelativeTo(null);
-        JPanelModificarProveedor jPanelModificarProveedor = new JPanelModificarProveedor(this.id);
-        this.add(jPanelModificarProveedor);
-        this.setVisible(true);
+        initComponents();
     }
 
     /**
@@ -33,10 +27,8 @@ public class JFrameModificarProveedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
@@ -45,8 +37,6 @@ public class JFrameModificarProveedor extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
 

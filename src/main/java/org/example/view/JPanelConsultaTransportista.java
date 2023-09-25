@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package org.example.view;
 
@@ -8,20 +8,14 @@ package org.example.view;
  *
  * @author ericp
  */
-public class JFrameCliente extends javax.swing.JFrame {
+public class JPanelConsultaTransportista extends javax.swing.JPanel {
 
     /**
-     * Creates new form JFrameCliente
+     * Creates new form JPanelConsultaTransportista
      */
-    public JFrameCliente() {
+    public JPanelConsultaTransportista() {
+        this.setSize(800,700);
         initComponents();
-        
-        this.setSize(800,600);
-        this.setTitle("Gestion cliente");
-        this.setLocationRelativeTo(null);
-        JPanelCliente jPanelCliente = new JPanelCliente();
-        this.add(jPanelCliente);
-        this.setVisible(true);
     }
 
     /**
@@ -33,11 +27,8 @@ public class JFrameCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
@@ -46,11 +37,9 @@ public class JFrameCliente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

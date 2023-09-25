@@ -4,22 +4,26 @@
  */
 package org.example.view;
 
+import javax.swing.JPanel;
+import org.example.controller.JFrameController;
+
 /**
  *
  * @author ericp
  */
 public class JFramePrincipal extends javax.swing.JFrame {
-
+    JPanel panelActual;
     /**
      * Creates new form JFramePrincipal
      */
     public JFramePrincipal() {
         initComponents();
-        this.setSize(800,600);
+        this.setSize(800,700);
         this.setTitle("LDE System");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(this);
-                
+        panelActual = new JPanelPrincipal();
+        this.add(panelActual);
         this.setVisible(true);
         
     }
@@ -34,121 +38,25 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        mItemCerrar = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuCliente = new javax.swing.JMenuItem();
-        jMenuProveedor = new javax.swing.JMenuItem();
-        jMenuProducto = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ericp\\Downloads\\fondoLogin (1).jpg")); // NOI18N
-
-        jMenu1.setText("File");
-
-        mItemCerrar.setText("Cerrar sesión");
-        mItemCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mItemCerrarActionPerformed(evt);
-            }
-        });
-        jMenu1.add(mItemCerrar);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Gestion");
-
-        jMenuCliente.setText("Cliente");
-        jMenuCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuClienteActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuCliente);
-
-        jMenuProveedor.setText("Proveedor");
-        jMenuProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuProveedorActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuProveedor);
-
-        jMenuProducto.setText("Producto");
-        jMenuProducto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuProductoActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuProducto);
-
-        jMenuItem2.setText("Deposito");
-        jMenu3.add(jMenuItem2);
-
-        jMenuItem3.setText("Transportista");
-        jMenu3.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Pedido");
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Informes");
-        jMenuBar1.add(jMenu5);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 1066, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuClienteActionPerformed
-        this.remove(this);
-        this.dispose();
-        JFrameCliente jFrameCliente = new JFrameCliente();
-
- 
-        
-    }//GEN-LAST:event_jMenuClienteActionPerformed
-
-    private void mItemCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemCerrarActionPerformed
-        this.dispose();
-        JFrameLogin jFrameLogin = new JFrameLogin();
-    }//GEN-LAST:event_mItemCerrarActionPerformed
-
-    private void jMenuProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuProveedorActionPerformed
-        this.dispose();
-        JFrameProveedor jFrameProveedor = new JFrameProveedor();
-    }//GEN-LAST:event_jMenuProveedorActionPerformed
-
-    private void jMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuProductoActionPerformed
-                this.dispose();
-        JFrameProducto jFrameProducto = new JFrameProducto();
-    }//GEN-LAST:event_jMenuProductoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,19 +64,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuCliente;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuProducto;
-    private javax.swing.JMenuItem jMenuProveedor;
-    private javax.swing.JMenuItem mItemCerrar;
     // End of variables declaration//GEN-END:variables
 }
