@@ -4,19 +4,40 @@
  */
 package org.example.view;
 
+import java.util.List;
+import org.example.controller.JFrameController;
+import org.example.controller.TipoTransportistaController;
+import org.example.controller.TransportistaController;
+import org.example.dao.TipoTransportistaJpaController;
+import org.example.dao.TransportistaJpaController;
+import org.example.model.TipoTransportista;
+import org.example.service.TipoTransportistaService;
+import org.example.service.TransportistaService;
+
+import org.example.util.EntityManagerFactoryUTIL;
+
 /**
  *
  * @author ericp
  */
 public class JPanelCrearTransportista extends javax.swing.JPanel {
+    private TransportistaController transportistaController;
+    private TipoTransportistaController tipoTransportistaController;
+    private TipoTransportistaJpaController tipoJpa;
 
     /**
      * Creates new form JPanelCrearTransportista
      */
-    public JPanelCrearTransportista() {
+    public JPanelCrearTransportista() {  
+        this.tipoTransportistaController = new TipoTransportistaController(new TipoTransportistaService(tipoJpa = new TipoTransportistaJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.transportistaController = new TransportistaController(new TransportistaService(new TransportistaJpaController(tipoJpa,EntityManagerFactoryUTIL.getEntityManagerFactory())));
+
         this.setSize(800,700);
         initComponents();
     }
+
+     //   public Transportista(String cuit, String nombre, String telefono,
+    //String email, TipoTransportista tipo) {
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,19 +48,250 @@ public class JPanelCrearTransportista extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        txtCuit = new javax.swing.JTextField();
+        lblAdress = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblCuit = new javax.swing.JLabel();
+        txtTel = new javax.swing.JTextField();
+        btnRegister = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        cbType = new javax.swing.JComboBox<>();
+        lblType = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(34, 131, 210));
+        addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                formAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(232, 245, 255));
+        jLabel2.setText("REGISTRAR TRANSPORTISTA");
+
+        jLabel1.setFont(new java.awt.Font("Roboto Medium", 2, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel1.setText("Por favor ingrese los datos requeridos");
+
+        lblName.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(204, 255, 255));
+        lblName.setText("Nombre");
+
+        txtName.setBackground(new java.awt.Color(34, 131, 210));
+        txtName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtName.setForeground(new java.awt.Color(51, 51, 51));
+        txtName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        txtName.setVerifyInputWhenFocusTarget(false);
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+
+        lblEmail.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(204, 255, 255));
+        lblEmail.setText("Email");
+
+        txtCuit.setBackground(new java.awt.Color(34, 131, 210));
+        txtCuit.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtCuit.setForeground(new java.awt.Color(51, 51, 51));
+        txtCuit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        txtCuit.setVerifyInputWhenFocusTarget(false);
+        txtCuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCuitActionPerformed(evt);
+            }
+        });
+
+        lblAdress.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        lblAdress.setForeground(new java.awt.Color(204, 255, 255));
+        lblAdress.setText("Telefono");
+
+        txtEmail.setBackground(new java.awt.Color(34, 131, 210));
+        txtEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        txtEmail.setVerifyInputWhenFocusTarget(false);
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailnone(evt);
+            }
+        });
+
+        lblCuit.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        lblCuit.setForeground(new java.awt.Color(204, 255, 255));
+        lblCuit.setText("Cuit");
+
+        txtTel.setBackground(new java.awt.Color(34, 131, 210));
+        txtTel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtTel.setForeground(new java.awt.Color(51, 51, 51));
+        txtTel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        txtTel.setVerifyInputWhenFocusTarget(false);
+        txtTel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelActionPerformed(evt);
+            }
+        });
+
+        btnRegister.setBackground(new java.awt.Color(0, 51, 255));
+        btnRegister.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        btnRegister.setForeground(new java.awt.Color(232, 245, 255));
+        btnRegister.setText("Registrar");
+        btnRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
+
+        btnCancel.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancel.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(232, 245, 255));
+        btnCancel.setText("Cancelar");
+        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
+        lblType.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        lblType.setForeground(new java.awt.Color(204, 255, 255));
+        lblType.setText("Tipo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(81, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(32, 32, 32))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCuit)
+                    .addComponent(lblName)
+                    .addComponent(lblEmail)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCuit, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAdress)
+                    .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblType)
+                        .addGap(31, 31, 31)
+                        .addComponent(cbType, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(133, 133, 133)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCuit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCuit, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblAdress)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblType))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(91, 91, 91))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void txtCuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCuitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCuitActionPerformed
+
+    private void txtEmailnone(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailnone
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailnone
+
+    private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelActionPerformed
+
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+//        if(!(txtName.getText().isEmpty()|| txtMail.getText().isEmpty() || txtAdress.getText().isEmpty() || txtTel.getText().isEmpty() || txtCuit.getText().isEmpty())){
+//            proveedorController.create(new Proveedor(txtCuit.getText(), txtName.getText(),txtAdress.getText(), txtMail.getText(),txtTel.getText()));
+//            JOptionPane.showMessageDialog(this, "Proveedor creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
+//            this.volverPanelProveedor();
+//        }else{
+//            JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
+//        }
+    }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        JFrameController.cambiarPanel(this, new JPanelTransportista(), this);
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
+        this.cargarComboBox();
+    }//GEN-LAST:event_formAncestorAdded
+    
+    private void cargarComboBox(){
+        List<TipoTransportista> tiposTransportistas = tipoJpa.findTipoTransportistaEntities();
+        for (TipoTransportista p : tiposTransportistas) {
+            cbType.addItem(p.getDescripcion());
+        }
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnRegister;
+    private javax.swing.JComboBox<String> cbType;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblAdress;
+    private javax.swing.JLabel lblCuit;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblType;
+    private javax.swing.JTextField txtCuit;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtTel;
     // End of variables declaration//GEN-END:variables
 }

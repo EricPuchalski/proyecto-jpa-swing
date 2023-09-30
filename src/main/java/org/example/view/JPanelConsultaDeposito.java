@@ -214,8 +214,14 @@ public class JPanelConsultaDeposito extends javax.swing.JPanel {
         List<Deposito> depositos = depositoController.findAll();
         if(!depositos.isEmpty()){
             for (Deposito e: depositos){
-                Object[] obj = {e.getId(), e.getNombre(), e.getDireccion(),e.getTelefono(), e.getEmail(), e.getContinente(), e.getEmpleado().getApellido()};
-                modeloTabla.addRow(obj);
+                if(depositoController.findOne(e.getId()).getEmpleado()!=null){
+                    Object[] obj = {e.getId(), e.getNombre(), e.getDireccion(),e.getTelefono(), e.getEmail(), e.getContinente(), e.getEmpleado().getApellido()};
+                    modeloTabla.addRow(obj);
+                } else{
+                    Object[] obj = {e.getId(), e.getNombre(), e.getDireccion(),e.getTelefono(), e.getEmail(), e.getContinente(), "Ninguno"};
+                    modeloTabla.addRow(obj);
+                }
+
             }
         }
 

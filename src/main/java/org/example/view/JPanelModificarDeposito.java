@@ -456,6 +456,8 @@ public class JPanelModificarDeposito extends javax.swing.JPanel {
             if(!(txtCod.getText().isEmpty()|| txtName.getText().isEmpty() || txtAdress.getText().isEmpty() || txtTel.getText().isEmpty()|| txtEmail.getText().isEmpty()|| txtLat.getText().isEmpty()|| txtLon.getText().isEmpty())){
                 if(tblEmpleados.getRowCount() > 0){
                     if(tblEmpleados.getSelectedRow()!=-1){
+                        Long idEmpleado = Long.parseLong(String.valueOf(tblEmpleados.getValueAt(tblEmpleados.getSelectedRow(),0)));
+                        Empleado emp = empleadoController.findOne(idEmpleado);
                         d.setNombre(txtName.getText());
                         d.setCodigo(txtCod.getText());
                         d.setDireccion(txtAdress.getText());
@@ -464,9 +466,10 @@ public class JPanelModificarDeposito extends javax.swing.JPanel {
                         d.setContinente(cbContinente.getSelectedItem().toString());
                         d.getPosicion().setLatitud(Double.valueOf(txtLat.getText()));
                         d.getPosicion().setLongitud(Double.valueOf(txtLon.getText()));
+                        d.setEmpleado(emp);
                         depositoController.upDate(d);
                         JOptionPane.showMessageDialog(this, "Deposito modificado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
-                        JFrameController.cambiarPanel(this, new JPanelDeposito(), this);
+                        JFrameController.cambiarPanel(this, new JPanelConsultaDeposito(), this);
                 }
                 else{
                   JOptionPane.showMessageDialog(null, "Por favor elija un empleado", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -523,7 +526,6 @@ public class JPanelModificarDeposito extends javax.swing.JPanel {
         txtLat.setText(String.valueOf(d.getPosicion().getLatitud()));
         txtLon.setText(String.valueOf(d.getPosicion().getLongitud()));
         cbContinente.setSelectedItem(d.getContinente());
-        
         
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -28,7 +28,7 @@ public class Deposito implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "deposito_id")
     )
     private List<Sector> sectores;
-    @OneToOne
+    @OneToOne(optional = true)
     private Empleado empleado;
 
     public enum Estado{

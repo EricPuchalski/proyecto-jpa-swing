@@ -38,9 +38,11 @@ public class JPanelTransportista extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 0, 153));
 
         jLabel3.setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gestion de Transportistas");
 
         jLabel4.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Por favor seleccione la opción que desee");
 
         btnCreate.setBackground(new java.awt.Color(0, 0, 102));

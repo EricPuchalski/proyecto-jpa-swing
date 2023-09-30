@@ -1,5 +1,5 @@
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\CategoriaProducto.java
-C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameCliente.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\TransportistaJpaController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Empleado.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelCrearProveedor.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelProveedor.java
@@ -7,6 +7,7 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\TransportistaController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\TransportistaService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\TransportistaRepository.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelTransportista.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\util\CargarDatos.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\RemitoRepository.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\ProductoService.java
@@ -21,12 +22,15 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\ProveedorJpaController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\InformeService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\Main.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\TipoTransportistaService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuTransportista.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Deposito.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\DepositoRepository.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\ProveedorController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\EmpleadoController.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\TipoTransportistaJpaController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\CategoriaProductoJpaController.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelCrearTransportista.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuProveedor.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\EmpleadoJpaController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelCrearEmpleado.java
@@ -57,7 +61,9 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\SectorRepository.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelProducto.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\ClienteController.java
-C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameProveedor.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelConsultaTransportista.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelModificarTransportista.java
+C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\TipoTransportistaController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelConsultaCliente.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\EmpleadoRepository.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\PedidoService.java
@@ -80,7 +86,6 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelConsultaProducto.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\controller\PedidoController.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\dao\ProductoJpaController.java
-C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameProducto.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelConsultaDeposito.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelConsultaEmpleado.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Proveedor.java
@@ -88,11 +93,9 @@ C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelModificarProducto.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelConsultaProveedor.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JPanelModificarEmpleado.java
-C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameDeposito.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuPrincipal.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\Transportista.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\repository\CRUD.java
-C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\JFrameEmpleado.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\service\ProveedorService.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\model\LineaPedido.java
 C:\Users\ericp\OneDrive\Documentos\GitHub\proyecto-final-poo\proyecto-jpa-swing\src\main\java\org\example\view\MenuPedido.java

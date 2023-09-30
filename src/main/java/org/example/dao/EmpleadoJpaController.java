@@ -128,6 +128,13 @@ public class EmpleadoJpaController implements Serializable {
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The empleado with id " + id + " no longer exists.", enfe);
             }
+                    // Elimina todos los productos asociados al proveedor en una sola transacción
+            em.createQuery("UPDATE Deposito d SET d.empleado = NULL WHERE d.empleado.id = :idEmpleado")
+              .setParameter("idEmpleado", id)
+              .executeUpdate();
+
+            // Finalmente, elimina el proveedor
+
             em.remove(empleado);
             em.getTransaction().commit();
         } finally {
