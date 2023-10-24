@@ -5,7 +5,7 @@ import org.example.dao.exceptions.NonexistentEntityException;
 import org.example.model.Cliente;
 import org.example.model.Deposito;
 import org.example.repository.ClienteRepository;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 import java.util.ArrayList;
 import java.util.List;

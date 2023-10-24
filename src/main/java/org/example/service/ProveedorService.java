@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.example.dao.ProveedorJpaController;
 import org.example.dao.exceptions.NonexistentEntityException;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 public class ProveedorService{
     ProveedorRepository proveedorRepository;

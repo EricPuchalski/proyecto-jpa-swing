@@ -20,7 +20,7 @@ import org.example.model.Pedido;
 import org.example.model.Producto;
 import org.example.service.ProductoService;
 import org.example.util.CargarDatos;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -35,7 +35,7 @@ public class JPanelCrearPedidoProductos extends javax.swing.JPanel {
      * Creates new form JPanelCrearPedidoProductos
      */
     public JPanelCrearPedidoProductos() {
-        this.productoController = new ProductoController(new ProductoService(new ProductoJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory(),new ProveedorJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()),new CategoriaProductoJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()))));
+        this.productoController = new ProductoController(new ProductoService(new ProductoJpaController(Conexion.getEmf(),new ProveedorJpaController(Conexion.getEmf()),new CategoriaProductoJpaController(Conexion.getEmf()))));
         initComponents();
         this.setSize(800,700);
     }

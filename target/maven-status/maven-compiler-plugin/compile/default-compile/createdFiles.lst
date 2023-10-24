@@ -77,6 +77,7 @@ org\example\view\JPanelPedido$3.class
 org\example\dao\CategoriaProductoJpaController.class
 org\example\view\JPanelCrearDeposito$15.class
 org\example\view\JPanelModificarCliente$2.class
+org\example\view\JPanelCrearPedidoPrimer$8.class
 org\example\view\JPanelCrearPedidoDepositos.class
 org\example\view\JPanelModificarTransportista$2.class
 org\example\view\JPanelModificarEmpleado$6.class
@@ -135,7 +136,6 @@ org\example\view\JPanelCrearProveedor$4.class
 org\example\view\JPanelCrearPedidoProductos$2.class
 org\example\view\JPanelModificarDeposito$1.class
 org\example\view\JPanelPrincipal$6.class
-org\example\util\EntityManagerFactoryUTIL.class
 org\example\view\JPanelCrearTransportista$7.class
 org\example\view\JPanelConsultaCliente.class
 org\example\view\JPanelCrearCliente$3.class
@@ -146,6 +146,7 @@ org\example\controller\ProveedorController.class
 org\example\view\JPanelModificarTransportista$6.class
 org\example\view\JFrameLogin.class
 org\example\view\JPanelPedido$6.class
+org\example\util\Conexion.class
 org\example\view\JPanelModificarDeposito.class
 org\example\service\ProductoService.class
 org\example\view\JPanelPrincipal$11.class

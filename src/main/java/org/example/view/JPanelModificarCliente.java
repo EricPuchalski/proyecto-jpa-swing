@@ -13,7 +13,7 @@ import org.example.dao.ClienteJpaController;
 import org.example.model.Cliente;
 import org.example.repository.ClienteRepository;
 import org.example.service.ClienteService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -27,7 +27,7 @@ public class JPanelModificarCliente extends javax.swing.JPanel {
      * Creates new form JPanelCrearCliente
      */
     public JPanelModificarCliente(Long id) {
-        this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(Conexion.getEmf())));
         this.id = id;
         initComponents();
         this.setSize(785,700);

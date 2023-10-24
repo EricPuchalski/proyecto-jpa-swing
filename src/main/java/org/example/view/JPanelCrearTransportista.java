@@ -16,7 +16,7 @@ import org.example.model.Transportista;
 import org.example.service.TipoTransportistaService;
 import org.example.service.TransportistaService;
 
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -31,8 +31,8 @@ public class JPanelCrearTransportista extends javax.swing.JPanel {
      * Creates new form JPanelCrearTransportista
      */
     public JPanelCrearTransportista() {  
-        this.tipoTransportistaController = new TipoTransportistaController(new TipoTransportistaService(tipoJpa = new TipoTransportistaJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
-        this.transportistaController = new TransportistaController(new TransportistaService(new TransportistaJpaController(tipoJpa,EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.tipoTransportistaController = new TipoTransportistaController(new TipoTransportistaService(tipoJpa = new TipoTransportistaJpaController(Conexion.getEmf())));
+        this.transportistaController = new TransportistaController(new TransportistaService(new TransportistaJpaController(tipoJpa,Conexion.getEmf())));
 
         this.setSize(800,700);
         initComponents();

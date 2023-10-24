@@ -18,7 +18,7 @@ import javax.persistence.criteria.Root;
 import org.example.dao.exceptions.NonexistentEntityException;
 import org.example.dao.exceptions.PreexistingEntityException;
 import org.example.model.Empleado;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *

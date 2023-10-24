@@ -15,7 +15,7 @@ import org.example.model.TipoTransportista;
 import org.example.model.Transportista;
 import org.example.service.TipoTransportistaService;
 import org.example.service.TransportistaService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -32,8 +32,8 @@ public class JPanelModificarTransportista extends javax.swing.JPanel {
      */
     public JPanelModificarTransportista(Long id) {
         this.idTransportistaMod = id;
-        this.tipoTransportistaController = new TipoTransportistaController(new TipoTransportistaService(new TipoTransportistaJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
-        this.transportistaController = new TransportistaController(new TransportistaService(new TransportistaJpaController(new TipoTransportistaJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory()),EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.tipoTransportistaController = new TipoTransportistaController(new TipoTransportistaService(new TipoTransportistaJpaController(Conexion.getEmf())));
+        this.transportistaController = new TransportistaController(new TransportistaService(new TransportistaJpaController(new TipoTransportistaJpaController(Conexion.getEmf()),Conexion.getEmf())));
         this.setSize(800,700);
         initComponents();
     }

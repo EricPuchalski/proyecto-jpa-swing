@@ -15,7 +15,7 @@ import org.example.model.Deposito;
 import org.example.model.Empleado;
 import org.example.service.DepositoService;
 import org.example.util.CargarDatos;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -28,7 +28,7 @@ public class JPanelConsultaDeposito extends javax.swing.JPanel {
      * Creates new form JPanelConsultaDeposito
      */
     public JPanelConsultaDeposito() {
-        this.depositoController = new DepositoController(new DepositoService(new DepositoJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.depositoController = new DepositoController(new DepositoService(new DepositoJpaController(Conexion.getEmf())));
         initComponents();
         this.setSize(800,700);
     }

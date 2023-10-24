@@ -8,7 +8,7 @@ import org.example.controller.EmpleadoController;
 import org.example.controller.JFrameController;
 import org.example.dao.EmpleadoJpaController;
 import org.example.service.EmpleadoService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 import org.example.model.Empleado;
 /**
  *
@@ -21,7 +21,7 @@ public class JPanelCrearEmpleado extends javax.swing.JPanel {
      * Creates new form JPanelCrearEmpleado
      */
     public JPanelCrearEmpleado() {
-        this.empleadoController = new EmpleadoController(new EmpleadoService(new EmpleadoJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.empleadoController = new EmpleadoController(new EmpleadoService(new EmpleadoJpaController(Conexion.getEmf())));
         initComponents();
         this.setSize(800,700);
     }

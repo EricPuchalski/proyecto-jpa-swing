@@ -12,7 +12,7 @@ import org.example.controller.ProveedorController;
 import org.example.dao.ProveedorJpaController;
 import org.example.model.Proveedor;
 import org.example.service.ProveedorService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -25,7 +25,7 @@ public class JPanelCrearProveedor extends javax.swing.JPanel {
      * Creates new form JPanelCrearProveedor
      */
     public JPanelCrearProveedor() {
-        this.proveedorController = new ProveedorController(new ProveedorService(new ProveedorJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.proveedorController = new ProveedorController(new ProveedorService(new ProveedorJpaController(Conexion.getEmf())));
         initComponents();
         
         this.setSize(785,700);

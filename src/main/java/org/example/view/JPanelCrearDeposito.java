@@ -19,7 +19,7 @@ import org.example.model.Empleado;
 import org.example.model.Posicion;
 import org.example.service.DepositoService;
 import org.example.service.EmpleadoService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -33,8 +33,8 @@ public class JPanelCrearDeposito extends javax.swing.JPanel {
      * Creates new form JPanelCrearDeposito
      */
     public JPanelCrearDeposito() {
-        this.empleadoController = new EmpleadoController(new EmpleadoService(new EmpleadoJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
-        this.depositoController = new DepositoController(new DepositoService(new DepositoJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.empleadoController = new EmpleadoController(new EmpleadoService(new EmpleadoJpaController(Conexion.getEmf())));
+        this.depositoController = new DepositoController(new DepositoService(new DepositoJpaController(Conexion.getEmf())));
         initComponents();
         this.setSize(800,700);
     }

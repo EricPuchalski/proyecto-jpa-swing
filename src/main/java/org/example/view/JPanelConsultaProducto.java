@@ -22,7 +22,7 @@ import org.example.model.Producto;
 import org.example.model.Proveedor;
 import org.example.service.ProductoService;
 import org.example.service.ProveedorService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -32,7 +32,7 @@ public class JPanelConsultaProducto extends javax.swing.JPanel {
     private ProductoController productoController;
     private ProveedorController proveedorController;
     private ProveedorJpaController proveedorJpaController;
-    private EntityManagerFactory emf = EntityManagerFactoryUTIL.getEntityManagerFactory();
+    private EntityManagerFactory emf = Conexion.getEmf();
     private EntityManager em = emf.createEntityManager();
 
     /**

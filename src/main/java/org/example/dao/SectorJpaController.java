@@ -14,7 +14,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import org.example.dao.exceptions.NonexistentEntityException;
 import org.example.model.Sector;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -23,7 +23,7 @@ import org.example.util.EntityManagerFactoryUTIL;
 public class SectorJpaController implements Serializable {
 
     public SectorJpaController(EntityManagerFactory emf) {
-        this.emf = EntityManagerFactoryUTIL.getEntityManagerFactory();
+        this.emf = Conexion.getEmf();
     }
     private EntityManagerFactory emf = null;
 

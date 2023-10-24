@@ -21,7 +21,7 @@ import org.example.model.Proveedor;
 import org.example.service.CategoriaProductoService;
 import org.example.service.ProductoService;
 import org.example.service.ProveedorService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -35,7 +35,7 @@ public class JPanelModificarProducto extends javax.swing.JPanel {
     ProductoController productoController;
     ProveedorJpaController pJpa;
     CategoriaProductoJpaController cJpa;
-    EntityManagerFactory emf = EntityManagerFactoryUTIL.getEntityManagerFactory();
+    EntityManagerFactory emf = Conexion.getEmf();
             ;
     /**
      * Creates new form JPanelModificarProducto

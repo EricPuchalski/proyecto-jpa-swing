@@ -16,14 +16,16 @@ import org.example.model.Deposito;
 import org.example.repository.*;
 import org.example.service.*;
 import org.example.util.CargarDatos;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 import org.example.view.*;
 
 
 
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory emf = EntityManagerFactoryUTIL.getEntityManagerFactory();
+        
+        Conexion.connect();
+        EntityManagerFactory emf = Conexion.getEmf();
         
         CargarDatos cDatos = new CargarDatos(
             new ClienteJpaController(emf),

@@ -12,7 +12,7 @@ import org.example.controller.TransportistaController;
 import org.example.dao.ClienteJpaController;
 import org.example.model.Cliente;
 import org.example.service.ClienteService;
-import org.example.util.EntityManagerFactoryUTIL;
+import org.example.util.Conexion;
 
 /**
  *
@@ -26,7 +26,7 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
      * Creates new form JPanelCrearPedidoPrimer
      */
     public JPanelCrearPedidoPrimer() {
-        this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(EntityManagerFactoryUTIL.getEntityManagerFactory())));
+        this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(Conexion.getEmf())));
         initComponents();
         this.setSize(800,700);
     }
