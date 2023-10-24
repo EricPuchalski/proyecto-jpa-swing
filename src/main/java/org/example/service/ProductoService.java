@@ -48,5 +48,7 @@ public class ProductoService {
             Logger.getLogger(ProductoService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    public List<Producto> buscarPorNombreParcial(String nombre){
+        return productoJpaController.buscarPorNombreParcial(nombre);
+    }
 }

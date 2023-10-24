@@ -5,12 +5,14 @@
 package org.example.view;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 import org.example.controller.JFrameController;
 import org.example.controller.TipoTransportistaController;
 import org.example.controller.TransportistaController;
 import org.example.dao.TipoTransportistaJpaController;
 import org.example.dao.TransportistaJpaController;
 import org.example.model.TipoTransportista;
+import org.example.model.Transportista;
 import org.example.service.TipoTransportistaService;
 import org.example.service.TransportistaService;
 
@@ -253,13 +255,20 @@ public class JPanelCrearTransportista extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTelActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-//        if(!(txtName.getText().isEmpty()|| txtMail.getText().isEmpty() || txtAdress.getText().isEmpty() || txtTel.getText().isEmpty() || txtCuit.getText().isEmpty())){
-//            proveedorController.create(new Proveedor(txtCuit.getText(), txtName.getText(),txtAdress.getText(), txtMail.getText(),txtTel.getText()));
-//            JOptionPane.showMessageDialog(this, "Proveedor creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
-//            this.volverPanelProveedor();
-//        }else{
-//            JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
-//        }
+        if(!(txtName.getText().isEmpty()|| txtCuit.getText().isEmpty() || txtEmail.getText().isEmpty() || txtTel.getText().isEmpty())){
+            TipoTransportista tT = null;
+            for(TipoTransportista p: tipoTransportistaController.findAll()){
+            if(p.getDescripcion().equals(cbType.getSelectedItem())){
+                tT = p;
+                }
+            }
+
+            transportistaController.create(new Transportista(txtCuit.getText(), txtName.getText(),txtEmail.getText(), txtTel.getText(),tT));
+            JOptionPane.showMessageDialog(this, "Transportista creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
+            JFrameController.cambiarPanel(this, new JPanelConsultaTransportista(), this);
+        }else{
+            JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

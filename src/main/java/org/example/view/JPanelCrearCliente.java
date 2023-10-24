@@ -4,6 +4,7 @@
  */
 package org.example.view;
 
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -14,6 +15,7 @@ import org.example.model.Cliente;
 import org.example.repository.ClienteRepository;
 import org.example.service.ClienteService;
 import org.example.util.EntityManagerFactoryUTIL;
+
 
 /**
  *
@@ -135,6 +137,7 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
         btnCancel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancelar");
+        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -145,6 +148,7 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
         btnRegister.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Registrar");
+        btnRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
@@ -245,14 +249,17 @@ public class JPanelCrearCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        if(!(txtName.getText().isEmpty()|| txtSurname.getText().isEmpty() || txtAdress.getText().isEmpty() || txtTel.getText().isEmpty() || txtCuit.getText().isEmpty())){
-            clienteController.create(new Cliente(txtCuit.getText(), txtName.getText(), txtSurname.getText(),txtAdress.getText(),txtTel.getText()));
-            JOptionPane.showMessageDialog(this, "Usuario creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
-            JFrameController.cambiarPanel(this, new JPanelCliente(), this);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+
+            if(!(txtName.getText().isEmpty()|| txtSurname.getText().isEmpty() || txtAdress.getText().isEmpty() || txtTel.getText().isEmpty() || txtCuit.getText().isEmpty())){
+                clienteController.create(new Cliente(txtCuit.getText(), txtName.getText(), txtSurname.getText(),txtAdress.getText(),txtTel.getText()));
+                JOptionPane.showMessageDialog(this, "Usuario creado con exito", "Creación exitosa", JOptionPane.INFORMATION_MESSAGE);
+                JFrameController.cambiarPanel(this, new JPanelCliente(), this);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Un campo no puede estar vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+
+
 
        
     }//GEN-LAST:event_btnRegisterActionPerformed

@@ -37,19 +37,19 @@ public class EmpleadoJpaController implements Serializable {
         public void upLoad() {
         Empleado empleado1 = new Empleado("1235433", "Juan", "Perez", "Calle 273", "232323");
         Empleado empleado2 = new Empleado("4562324", "María", "López", "Avenida 45", "454545");
-        Empleado empleado3 = new Empleado("7896754", "Pedro", "Gómez", "Calle 67", "676767");
-        Empleado empleado4 = new Empleado("1067515", "Laura", "Rodríguez", "Avenida 819", "898989");
-        Empleado empleado5 = new Empleado("1217665", "Carlos", "Sánchez", "Calle 110", "101010");
-        Empleado empleado6 = new Empleado("1238767", "Juan", "Perez", "Calle 213", "232323");
-        Empleado empleado7 = new Empleado("4564325", "María", "López", "Avenida 45", "454545");
-        Empleado empleado8 = new Empleado("7891234", "Pedro", "Gómez", "Calle 67", "676767");
+        Empleado empleado3 = new Empleado("7896754", "Augusto", "Britez", "Calle 67", "676767");
+        Empleado empleado4 = new Empleado("1067515", "Ruben", "Luka", "Avenida 819", "898989");
+        Empleado empleado5 = new Empleado("1217665", "Pepe", "Felix", "Calle 110", "101010");
+        Empleado empleado6 = new Empleado("1238767", "Leonel", "Pratto", "Calle 213", "232323");
+        Empleado empleado7 = new Empleado("4564325", "Luisa", "Martinez", "Avenida 45", "454545");
+        Empleado empleado8 = new Empleado("7891234", "Pedro", "Gabon", "Calle 67", "676767");
         Empleado empleado9 = new Empleado("1015423", "Laura", "Rodríguez", "Avenida 89", "898989");
         Empleado empleado10 = new Empleado("2122145", "Carlos", "Sánchez", "Calle 140", "101010");
-        Empleado empleado11 = new Empleado("1223764", "Juan", "Perez", "Calle 223", "232323");
-        Empleado empleado12 = new Empleado("4563435", "María", "López", "Avenida 45", "454545");
+        Empleado empleado11 = new Empleado("1223764", "Juan", "Modric", "Calle 223", "232323");
+        Empleado empleado12 = new Empleado("4563435", "Fernando", "López", "Avenida 45", "454545");
         Empleado empleado13 = new Empleado("7896544", "Pedro", "Gómez", "Calle 67", "676767");
-        Empleado empleado14 = new Empleado("1051141", "Laura", "Rodríguez", "Avenida 829", "898989");
-        Empleado empleado15 = new Empleado("1241111", "Carlos", "Sánchez", "Calle 170", "101010");
+        Empleado empleado14 = new Empleado("1051141", "Laura", "Bravo", "Avenida 829", "898989");
+        Empleado empleado15 = new Empleado("1241111", "Vanesa", "Lukovic", "Calle 170", "101010");
 
         try {
             this.create(empleado1);

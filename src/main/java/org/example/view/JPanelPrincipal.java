@@ -175,6 +175,11 @@ public class JPanelPrincipal extends javax.swing.JPanel {
                 btnEmpleadoMouseEntered(evt);
             }
         });
+        btnPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPedidoActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 280, 50));
 
         btnInformes.setBackground(new java.awt.Color(0, 51, 153));
@@ -245,6 +250,10 @@ public class JPanelPrincipal extends javax.swing.JPanel {
     private void btnEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadoActionPerformed
         JFrameController.cambiarPanel(this, new JPanelEmpleado(), this);
     }//GEN-LAST:event_btnEmpleadoActionPerformed
+
+    private void btnPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidoActionPerformed
+        JFrameController.cambiarPanel(this, new JPanelPedido(), this);
+    }//GEN-LAST:event_btnPedidoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -35,5 +35,7 @@ public class ProductoController{
         productoService.upDate(producto);
     }
 
-
+    public List<Producto> buscarPorNombreParcial(String nombre){
+        return productoService.buscarPorNombreParcial(nombre);
+    }
 }

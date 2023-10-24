@@ -34,6 +34,9 @@ public class ClienteController{
     public void edit(Cliente cliente){
         clienteService.edit(cliente);
     }
+    public List<Cliente> buscarPorCuitParcial(String cuit){
+        return clienteService.buscarPorCuitParcial(cuit);
+    }
 //    public void upDate(Cliente cliente) {
 //        clienteService.upDate(cliente);
 //    }

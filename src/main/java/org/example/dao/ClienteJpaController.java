@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import org.example.dao.exceptions.NonexistentEntityException;
@@ -31,35 +32,33 @@ public class ClienteJpaController implements Serializable {
     }
 
     public void upLoad(){
-        Cliente c1 = new Cliente("123","Eric", "Puch", "Josesito 232","3243242");
-        Cliente c2 = new Cliente("32323","Juan", "Mendez", "San jose 34354","23435");
-        Cliente c3 = new Cliente("234324","Elric", "Jalil", "Calle 150","34543543");
+        Cliente c1 = new Cliente("1231","Eric", "Puch", "Josesito 232","3243242");
+        Cliente c2 = new Cliente("3232","Juan", "Mendez", "San jose 34354","23435");
+        Cliente c3 = new Cliente("2343","Elric", "Jalil", "Calle 150","34543543");
         Cliente c4 = new Cliente("3453","Carlos", "Perez", "Calle 32","653634");
-        Cliente c5 = new Cliente("54634","Gustavo", "Lopez", "calle 09","6435345");
-        Cliente c6 = new Cliente("534534","Pablo", "Gonzalez", "Bolivar 232","43543");
-        Cliente c7 = new Cliente("543534","Martin", "Khea", "Calle 90","65454");
+        Cliente c5 = new Cliente("5463","Gustavo", "Lopez", "calle 09","6435345");
+        Cliente c6 = new Cliente("5345","Pablo", "Gonzalez", "Bolivar 232","43543");
+        Cliente c7 = new Cliente("5435","Martin", "Khea", "Calle 90","65454");
         Cliente c8 = new Cliente("1234", "John", "Doe", "Street 123", "1234567");
         Cliente c9 = new Cliente("5678", "Jane", "Smith", "Avenue 456", "9876543");
         Cliente c10 = new Cliente("9012", "Michael", "Johnson", "Road 789", "5678901");
         Cliente c11 = new Cliente("3456", "Emily", "Davis", "Lane 321", "1098765");
         Cliente c12 = new Cliente("7890", "David", "Anderson", "Court 654", "4321098");
-        Cliente c13 = new Cliente("2345", "Sarah", "Wilson", "Plaza 987", "8765432");
-        Cliente c14 = new Cliente("6789", "Daniel", "Taylor", "Square 654", "2109876");
-        Cliente c15 = new Cliente("0123", "Olivia", "Thomas", "Circle 321", "5432109");
-        Cliente c16 = new Cliente("4567", "Matthew", "Roberts", "Park 789", "8901234");
-        Cliente c17 = new Cliente("8901", "Sophia", "Clark", "Garden 123", "5678901");
-        Cliente c18 = new Cliente("2345", "James", "Lewis", "Drive 456", "4321098");
-        Cliente c19 = new Cliente("6789", "Emma", "Lee", "Boulevard 789", "8765432");
+        Cliente c13 = new Cliente("2348", "Sarah", "Wilson", "Plaza 987", "8765432");
+        Cliente c14 = new Cliente("6769", "Daniel", "Taylor", "Square 654", "2109876");
+        Cliente c15 = new Cliente("0655", "Olivia", "Thomas", "Circle 321", "5432109");
+        Cliente c16 = new Cliente("4561", "Matthew", "Roberts", "Park 789", "8901234");
+        Cliente c17 = new Cliente("8911", "Sophia", "Clark", "Garden 123", "5678901");
+        Cliente c18 = new Cliente("2341", "James", "Lewis", "Drive 456", "4321098");
+        Cliente c19 = new Cliente("6289", "Emma", "Lee", "Boulevard 789", "8765432");
         Cliente c20 = new Cliente("0123", "Benjamin", "Walker", "Highway 321", "2109876");
-        Cliente c21 = new Cliente("4567", "Ava", "Hall", "Lane 654", "5432109");
-        Cliente c22 = new Cliente("8901", "William", "Young", "Street 987", "8901234");
-        Cliente c23 = new Cliente("2345", "Mia", "Allen", "Avenue 123", "5678901");
-        Cliente c24 = new Cliente("6789", "Alexander", "King", "Road 456", "4321098");
-        Cliente c25 = new Cliente("0123", "Sofia", "Wright", "Court 789", "8765432");
-        Cliente c26 = new Cliente("4567", "Charlotte", "Lopez", "Plaza 321", "2109876");
-        Cliente c27 = new Cliente("8901", "Joseph", "Hill", "Square 654", "5432109");
-
-
+        Cliente c21 = new Cliente("4562", "Ava", "Hall", "Lane 654", "5432109");
+        Cliente c22 = new Cliente("8921", "William", "Young", "Street 987", "8901234");
+        Cliente c23 = new Cliente("2340", "Mia", "Allen", "Avenue 123", "5678901");
+        Cliente c24 = new Cliente("6819", "Alexander", "King", "Road 456", "4321098");
+        Cliente c25 = new Cliente("0122", "Sofia", "Wright", "Court 789", "8765432");
+        Cliente c26 = new Cliente("4522", "Charlotte", "Lopez", "Plaza 321", "2109876");
+        Cliente c27 = new Cliente("8201", "Joseph", "Hill", "Square 654", "5432109");
 
         this.create(c1);
         this.create(c2);
@@ -88,8 +87,8 @@ public class ClienteJpaController implements Serializable {
         this.create(c25);
         this.create(c26);
         this.create(c27);
-
     }
+    
     public void create(Cliente cliente) {
         EntityManager em = null;
         try {
@@ -192,6 +191,18 @@ public class ClienteJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+                public List<Cliente> buscarPorCuitParcial(String cuit) {
+        EntityManager em = getEntityManager();
+        try{
+            TypedQuery<Cliente> query = em.createQuery(
+                "SELECT c FROM Cliente c WHERE c.cuit LIKE :cuit", Cliente.class);
+            query.setParameter("cuit", cuit);
+        return query.getResultList();
+        } finally{
+            em.close();
+        }
+
     }
     
 }

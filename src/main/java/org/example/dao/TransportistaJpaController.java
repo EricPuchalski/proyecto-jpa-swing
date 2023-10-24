@@ -35,11 +35,11 @@ public class TransportistaJpaController implements Serializable {
         public void upLoad() {
             
             Transportista t1 = new Transportista("12321","Correo Argentino","12342", "correo_argentino@gmail.com",tipoTransportistaJpaController.findTipoTransportista(1l));
-            Transportista t2 = new Transportista("3213","OCA","4352", "oca@gmail.com",tipoTransportistaJpaController.findTipoTransportista(2l));
-            Transportista t3 = new Transportista("232","OCASA","7653432", "oacasa@gmail.com",tipoTransportistaJpaController.findTipoTransportista(3l));
-            Transportista t4 = new Transportista("34","AMAZON","4235234", "amazon@gmail.com",tipoTransportistaJpaController.findTipoTransportista(1l));
-            Transportista t5 = new Transportista("676","DHL","12321", "dhl@gmail.com",tipoTransportistaJpaController.findTipoTransportista(2l));
-            Transportista t6 = new Transportista("6762","FedEx","123321", "fedex@gmail.com",tipoTransportistaJpaController.findTipoTransportista(3l));
+            Transportista t2 = new Transportista("32133","OCA","4352", "oca@gmail.com",tipoTransportistaJpaController.findTipoTransportista(2l));
+            Transportista t3 = new Transportista("23255","OCASA","7653432", "oacasa@gmail.com",tipoTransportistaJpaController.findTipoTransportista(3l));
+            Transportista t4 = new Transportista("34443","AMAZON","4235234", "amazon@gmail.com",tipoTransportistaJpaController.findTipoTransportista(1l));
+            Transportista t5 = new Transportista("67611","DHL","12321", "dhl@gmail.com",tipoTransportistaJpaController.findTipoTransportista(2l));
+            Transportista t6 = new Transportista("67624","FedEx","123321", "fedex@gmail.com",tipoTransportistaJpaController.findTipoTransportista(3l));
             
             this.create(t1);
             this.create(t2);

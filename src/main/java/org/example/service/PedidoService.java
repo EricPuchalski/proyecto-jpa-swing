@@ -1,36 +1,27 @@
-//package org.example.service;
-//
-//import org.example.model.LineaPedido;
-//import org.example.model.Pedido;
-//import org.example.repository.EmpleadoRepository;
-//import org.example.repository.PedidoRepository;
-//import org.example.repository.SectorRepository;
-//import org.example.repository.TransportistaRepository;
-//
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class PedidoService {
-//    private SectorRepository sectorRepository;
-//    private TransportistaRepository transportistaRepository;
-//    private PedidoRepository pedidoRepository;
-//
-//    private EmpleadoRepository empleadoRepository;
-//
-//    private Pedido pedido;
-//
-//    public PedidoService( PedidoRepository pedidoRepository) {
-//        this.sectorRepository = new SectorRepository();
-//        this.transportistaRepository = new TransportistaRepository();
-//        this.pedidoRepository=pedidoRepository;
-//        this.empleadoRepository = new EmpleadoRepository();
-//    }
-//
-//    public void crearPedido(Pedido pedido) {
-//            pedidoRepository.crearPedido(pedido);
-//    }
-//
+package org.example.service;
+
+import org.example.model.LineaPedido;
+import org.example.model.Pedido;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+import org.example.dao.PedidoJpaController;
+
+public class PedidoService {
+    private PedidoJpaController pedidoJpaController;
+
+    private Pedido pedido;
+
+    public PedidoService( PedidoJpaController pedidoJpaController) {
+        this.pedidoJpaController = pedidoJpaController;
+    }
+
+    public void crearPedido(Pedido pedido) {
+            pedidoJpaController.crearPedido(pedido);
+    }
+
 //    public List<Pedido> obtenerTodosLosPedidos() {
 //        List<Pedido> pedidosEncontrados = new ArrayList<>();
 //        for (Pedido pedido: pedidoRepository.obtenerTodosLosPedidos()
@@ -102,8 +93,8 @@
 //    public int contarPedidosEnEstadoPendiente(){
 //        return pedidoRepository.contarPedidosEnEstadoPendiente();
 //    }
-//
-//
-//}
-//
-//
+
+
+}
+
+

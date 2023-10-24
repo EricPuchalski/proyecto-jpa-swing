@@ -58,5 +58,8 @@ public class  ClienteService{
         }
 
     }
+    public List<Cliente> buscarPorCuitParcial(String cuit){
+        return clienteJpaController.buscarPorCuitParcial(cuit);
+    }
 }
 

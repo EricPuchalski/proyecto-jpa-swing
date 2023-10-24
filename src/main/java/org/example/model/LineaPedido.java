@@ -1,48 +1,76 @@
 package org.example.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-import java.util.Random;
+@Entity
+@Table(name = "lineas_pedidos")
 
-@Setter
-@Getter
-
-public class LineaPedido {
+public class LineaPedido implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
     private Producto producto;
     private int cantidad;
-    private static String ultimoId;
-    private String codigo;
-    private double calificacion;
     private int calificacionProveedor;
+    private Pedido pedido;
 
-    public LineaPedido(Producto producto, int cantidad) {
+    public LineaPedido(Producto producto, int cantidad, Pedido pedido) {
         this.producto = producto;
         this.cantidad = cantidad;
-        this.codigo = generarId();
+        this.pedido = pedido;
     }
-    private static String generarId() {
-        // Aquí utilizamos la clase Random para generar un número aleatorio.
-        // También se podría implementar una lógica más robusta para asegurar la unicidad.
-        Random random = new Random();
-        int nuevoIdInt = random.nextInt(10000); // Puedes ajustar el rango según tus necesidades.
-        String nuevoId = String.valueOf(nuevoIdInt);
 
-        // Si por algún motivo el ID generado ya existe, genera uno nuevo hasta que sea único.
-        while (nuevoId.equals(ultimoId)) {
-            nuevoIdInt = random.nextInt(10000);
-            nuevoId = String.valueOf(nuevoIdInt);
-        }
+    public LineaPedido() {
+    }
 
-        // Actualiza el último ID generado para el siguiente producto.
-        ultimoId = nuevoId;
-        return nuevoId;
+    public Long getId() {
+        return id;
     }
-    @Override
-    public String toString() {
-        return "LineaPedido{" +
-                "producto=" + producto +
-                ", cantidad=" + cantidad +
-                '}';
+
+    public void setId(Long id) {
+        this.id = id;
     }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public int getCalificacionProveedor() {
+        return calificacionProveedor;
+    }
+
+    public void setCalificacionProveedor(int calificacionProveedor) {
+        this.calificacionProveedor = calificacionProveedor;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+    
+    
+    
 }

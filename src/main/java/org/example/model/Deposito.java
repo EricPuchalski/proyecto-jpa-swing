@@ -15,6 +15,7 @@ public class Deposito implements Serializable {
     private String nombre;
     private String direccion;
     private String telefono;
+    //@Column(unique = true)
     private String email;
     private String continente;
     @Embedded

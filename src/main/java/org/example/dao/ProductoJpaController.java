@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import org.example.dao.exceptions.NonexistentEntityException;
@@ -182,6 +183,18 @@ public class ProductoJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+            public List<Producto> buscarPorNombreParcial(String nombre) {
+        EntityManager em = getEntityManager();
+        try{
+            TypedQuery<Producto> query = em.createQuery(
+                "SELECT p FROM Producto p WHERE p.nombre LIKE :nombre", Producto.class);
+            query.setParameter("nombre", nombre);
+        return query.getResultList();
+        } finally{
+            em.close();
+        }
+
     }
     
 }
