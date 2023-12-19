@@ -4,22 +4,26 @@
  */
 package org.example.view;
 
+import javax.swing.JPanel;
+import org.example.controller.JFrameController;
+
 /**
  *
  * @author ericp
  */
 public class JFramePrincipal extends javax.swing.JFrame {
-
+    JPanel panelActual;
     /**
      * Creates new form JFramePrincipal
      */
     public JFramePrincipal() {
         initComponents();
-        this.setSize(800,600);
-        this.setTitle("Gestión de pedidos");
+        this.setSize(800,700);
+        this.setTitle("LDE System");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(this);
-                
+        panelActual = new JPanelPrincipal();
+        this.add(panelActual);
         this.setVisible(true);
         
     }
@@ -33,17 +37,22 @@ public class JFramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1066, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         pack();
@@ -55,5 +64,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

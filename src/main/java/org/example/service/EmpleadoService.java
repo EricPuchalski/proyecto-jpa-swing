@@ -1,56 +1,63 @@
 package org.example.service;
-
-import org.example.model.Cliente;
-import org.example.model.Deposito;
-import org.example.model.Empleado;
-import org.example.repository.EmpleadoRepository;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.example.dao.EmpleadoJpaController;
+import org.example.dao.exceptions.NonexistentEntityException;
+import org.example.model.Empleado;
 
-public class EmpleadoService implements CRUD<Empleado>{
-    private EmpleadoRepository empleadoRepository;
 
-    public EmpleadoService(EmpleadoRepository empleadoRepository) {
-        this.empleadoRepository = new EmpleadoRepository();
+public class EmpleadoService{
+    
+    private EmpleadoJpaController empleadoJpaController;
+    
+
+
+    public EmpleadoService(EmpleadoJpaController ejc) {
+        this.empleadoJpaController = ejc;
     }
 
 
-    @Override
     public void save(Empleado empleado) {
-        if (findOne(empleado.getCUIT())!=null) {
-            empleadoRepository.save(empleado);
+        try {
+            empleadoJpaController.create(empleado);
+        } catch (Exception ex) {
+            Logger.getLogger(EmpleadoService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    @Override
+
     public void upDate(Empleado empleado) {
-        if(findOne(empleado.getCUIT()) != null){
-            empleadoRepository.upDate(empleado);
+        try {
+            empleadoJpaController.edit(empleado);
+        } catch (Exception ex) {
+            Logger.getLogger(EmpleadoService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    @Override
-    public Empleado findOne(String cuit) {
-        Empleado empleado = null;
-        if (empleadoRepository.findOne(cuit)!= null) {
-           empleado = empleadoRepository.findOne(cuit);
 
-        }
-        return empleado;
+    public Empleado findOne(Long id) {
+
+        return empleadoJpaController.findEmpleado(id);
     }
 
 
-    @Override
+
     public List<Empleado> findAll() {
-        return empleadoRepository.findAll();
+        return empleadoJpaController.findEmpleadoEntities();
     }
 
 
-    @Override
-    public void delete(String cuit) {
-        if (findOne(cuit)!= null){
-            empleadoRepository.delete(cuit);
+
+    public void delete(Long id) {
+        try {
+            empleadoJpaController.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(EmpleadoService.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public List<Empleado> buscarPorCuitParcial(String cuit){
+        return empleadoJpaController.buscarPorCuitParcial(cuit);
     }
 }

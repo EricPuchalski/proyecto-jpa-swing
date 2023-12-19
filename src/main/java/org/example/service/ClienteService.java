@@ -1,51 +1,65 @@
 package org.example.service;
 
+import org.example.dao.ClienteJpaController;
+import org.example.dao.exceptions.NonexistentEntityException;
 import org.example.model.Cliente;
 import org.example.model.Deposito;
 import org.example.repository.ClienteRepository;
+import org.example.util.Conexion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class  ClienteService implements CRUD<Cliente>{
+public class  ClienteService{
     private ClienteRepository clienteRepository;
+    ClienteJpaController clienteJpaController;
 
-    public ClienteService(ClienteRepository clienteRepository){
-        this.clienteRepository = clienteRepository;
+    public ClienteService(ClienteJpaController clienteJpaController ){
+        this.clienteJpaController = clienteJpaController;
+
     }
     public void save(Cliente cliente){
-        if (clienteRepository.findOne(cliente.getCuit())!=null) {
-        }else {clienteRepository.save(cliente);
-
-        }
+            clienteJpaController.create(cliente);
     }
 
 
     public List<Cliente>findAll(){
-        return clienteRepository.findAll();
+        return clienteJpaController.findClienteEntities();
     }
 
 
-    public Cliente findOne(String cuit){
-        Cliente cliente = null;
-        if (clienteRepository.findOne(cuit)!=null) {
-            cliente = clienteRepository.findOne(cuit);
+    public Cliente findOne(Long id){
 
-        }
-        return cliente;
+        return clienteJpaController.findCliente(id);
+
 
     }
-
-
-    public void upDate(Cliente cliente){
-        if(findOne(cliente.getCuit()) != null){
-            clienteRepository.upDate(cliente);
+    public void edit(Cliente cliente){
+        try {
+            clienteJpaController.edit(cliente);
+        } catch (Exception ex) {
+            Logger.getLogger(ClienteService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void delete(String cuit){
-        if (findOne(cuit)!= null){
-            clienteRepository.delete(cuit);
+
+//    public void upDate(Cliente cliente){
+//        if(findOne(cliente.getCuit()) != null){
+//            clienteRepository.upDate(cliente);
+//        }
+//    }
+    public void delete(Long id){
+
+        try {
+            clienteJpaController.destroy(id);
+        } catch (NonexistentEntityException e) {
+            throw new RuntimeException(e);
         }
+
+    }
+    public List<Cliente> buscarPorCuitParcial(String cuit){
+        return clienteJpaController.buscarPorCuitParcial(cuit);
     }
 }
 

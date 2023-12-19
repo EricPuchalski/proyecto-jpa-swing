@@ -4,11 +4,6 @@
  */
 package org.example.view;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.io.IOException;
-
 /**
  *
  * @author ericp
@@ -16,17 +11,17 @@ import java.io.IOException;
 public class JFrameLogin extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form JFrameL
      */
     public JFrameLogin() {
         initComponents();
-        this.setSize(800,600);
+        this.setSize(800,700);
         this.setLocationRelativeTo(null);
+        JPanelLogin jPanelL = new JPanelLogin();
+        this.add(jPanelL);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        JPanelLogin jPanelLogin = new JPanelLogin(this);;
-        this.add(jPanelLogin);
-        this.setTitle("Gestor de pedidos");
         this.setVisible(true);
+        
     }
 
     /**
@@ -39,7 +34,8 @@ public class JFrameLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 102, 51));
+        setAutoRequestFocus(false);
+        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,11 +49,9 @@ public class JFrameLogin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

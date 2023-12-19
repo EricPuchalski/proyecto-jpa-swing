@@ -1,9 +1,9 @@
 package org.example.controller;
 
 import org.example.model.Transportista;
-import org.example.service.TransportistaService;
 
 import java.util.List;
+import org.example.service.TransportistaService;
 
 public class TransportistaController {
     private TransportistaService transportistaService;
@@ -16,12 +16,12 @@ public class TransportistaController {
         transportistaService.save(transportista);
     }
 
-    public Transportista findOne(String cuit){
-        return transportistaService.findOne(cuit);
+    public Transportista findOne(Long id){
+        return transportistaService.findOne(id);
     }
 
-    public void delete(String cuit){
-        transportistaService.delete(cuit);
+    public void delete(Long id){
+        transportistaService.delete(id);
     }
 
     public List<Transportista> findAll(){

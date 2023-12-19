@@ -5,45 +5,49 @@ import org.example.repository.ProveedorRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.example.dao.ProveedorJpaController;
+import org.example.dao.exceptions.NonexistentEntityException;
+import org.example.util.Conexion;
 
-public class ProveedorService implements CRUD<Proveedor> {
+public class ProveedorService{
     ProveedorRepository proveedorRepository;
+    ProveedorJpaController proveedorJpaController;
 
-    public ProveedorService(ProveedorRepository proveedorRepository) {
-        this.proveedorRepository = proveedorRepository;
+    public ProveedorService(ProveedorJpaController proveedorJpaController) {
+        this.proveedorJpaController = proveedorJpaController;
     }
 
     public void save(Proveedor proveedor) {
-        if (findOne(proveedor.getCuit()) == null) {
-            proveedorRepository.save(proveedor);
-        }
+            proveedorJpaController.create(proveedor);
     }
 
     public List<Proveedor> findAll() {
-        return proveedorRepository.findAll();
+        return proveedorJpaController.findProveedorEntities();
     }
 
 
 
-    public Proveedor findOne(String cuit) {
-        Proveedor proveedor = null;
-        if (proveedorRepository.findOne(cuit) != null) {
-            proveedor = proveedorRepository.findOne(cuit);
-        }
-        return proveedor;
+    public Proveedor findOne(Long id) {
+        return proveedorJpaController.findProveedor(id);
     }
 
 
 
     public void upDate(Proveedor proveedor) {
-        if (findOne(proveedor.getCuit()) != null) {
-            proveedorRepository.upDate(proveedor);
+        try {
+            proveedorJpaController.edit(proveedor);
+        } catch (Exception ex) {
+            Logger.getLogger(ProveedorService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void delete(String cuit) {
-        if (findOne(cuit) != null) {
-            proveedorRepository.delete(cuit);
+    public void delete(Long id) {
+        try {
+            proveedorJpaController.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ProveedorService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

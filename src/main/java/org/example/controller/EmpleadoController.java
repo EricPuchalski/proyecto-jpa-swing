@@ -1,42 +1,44 @@
 package org.example.controller;
-
+import java.util.List;
 import org.example.model.Empleado;
 import org.example.service.EmpleadoService;
 
-import java.util.List;
-
-public class EmpleadoController implements  CRUD<Empleado> {
+public class EmpleadoController {
     EmpleadoService empleadoService;
 
     public EmpleadoController(EmpleadoService empleadoService) {
         this.empleadoService = empleadoService;
     }
 
-    @Override
+
     public void create(Empleado empleado) {
         empleadoService.save(empleado);
     }
 
-    @Override
-    public Empleado findOne(String id) {
+
+    public Empleado findOne(Long id) {
         return empleadoService.findOne(id);
     }
 
-    @Override
+
     public List<Empleado> findAll() {
         return empleadoService.findAll();
     }
 
 
-    @Override
+
     public void upDate(Empleado empleado) {
         empleadoService.upDate(empleado);
 
     }
 
-    @Override
-    public void delete(String id) {
+
+    public void delete(Long id) {
         empleadoService.delete(id);
 
+    }
+    
+    public List<Empleado> buscarPorCuitParcial(String cuit){
+        return empleadoService.buscarPorCuitParcial(cuit);
     }
 }

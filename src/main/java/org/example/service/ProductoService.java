@@ -2,52 +2,53 @@ package org.example.service;
 
 import org.example.model.Deposito;
 import org.example.model.Producto;
-import org.example.model.Proveedor;
-import org.example.repository.ProductoRepository;
+
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.example.dao.ProductoJpaController;
+import org.example.dao.exceptions.NonexistentEntityException;
 
-public class ProductoService implements CRUD<Producto>{
+public class ProductoService {
+    private ProductoJpaController productoJpaController;
 
-    private ProductoRepository productoRepository;
-    private boolean productoExistente;
-    public ProductoService(ProductoRepository productoRepository) {
-        this.productoRepository = productoRepository;
+    public ProductoService(ProductoJpaController productoJpaController) {
+        this.productoJpaController = productoJpaController;
     }
 
     public void save(Producto producto) {
-        if (findOne(producto.getCodigo()) == null) {
-            productoRepository.save(producto);
-        }
+        productoJpaController.create(producto);
     }
 
     public List<Producto> findAll() {
-        return productoRepository.findAll();
+        return productoJpaController.findProductoEntities();
     }
 
 
 
-    public Producto findOne(String codigo) {
-        Producto producto = null;
-        if (productoRepository.findOne(codigo) != null) {
-             producto = productoRepository.findOne(codigo);
-
-        }
-        return producto;
+    public Producto findOne(Long id) {
+        return productoJpaController.findProducto(id);
     }
 
 
     public void upDate(Producto producto) {
-        if (findOne(producto.getCodigo()) != null) {
-            productoRepository.upDate(producto);
+        try {
+            productoJpaController.edit(producto);
+        } catch (Exception ex) {
+            Logger.getLogger(ProductoService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void delete(String codigo) {
-        if (findOne(codigo) != null) {
-            productoRepository.delete(codigo);
+    public void delete(Long id) {
+        try {
+            productoJpaController.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ProductoService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    public List<Producto> buscarPorNombreParcial(String nombre){
+        return productoJpaController.buscarPorNombreParcial(nombre);
+    }
 }

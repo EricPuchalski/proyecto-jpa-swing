@@ -4,38 +4,70 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.UUID;
+import javax.persistence.Embeddable;
 
-@Getter
-@Setter
+@Embeddable
+
 public class Seguimiento {
-    private LocalDate fechaYHora;
+    private LocalDate fechaSeguimiento;
     private double latitud;
     private double longitud;
-    private Pedido pedido;
     private Sector sector;
     private String numeroDeRastreo;
 
     public Seguimiento(LocalDate fechaYHora, double latitud, double longitud, Pedido pedido, Sector sector) {
-        this.fechaYHora = fechaYHora;
+        this.fechaSeguimiento = fechaYHora;
         this.latitud = latitud;
         this.longitud = longitud;
-        this.pedido = pedido;
         this.sector = sector;
     }
     public Seguimiento(LocalDate fechaYHora, double latitud, double longitud) {
-        this.fechaYHora = fechaYHora;
+        this.fechaSeguimiento = fechaYHora;
         this.latitud = latitud;
         this.longitud = longitud;
     }
 
-    public Seguimiento(Pedido pedido) {
-        this.pedido = pedido;
-    }
-    public String generarNumeroRastreo() {
-        // genera un identificador unical
-        return UUID.randomUUID().toString();
+    public LocalDate getFechaYHora() {
+        return fechaSeguimiento;
     }
 
+    public void setFechaYHora(LocalDate fechaYHora) {
+        this.fechaSeguimiento = fechaYHora;
+    }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
+    }
+
+    public Sector getSector() {
+        return sector;
+    }
+
+    public void setSector(Sector sector) {
+        this.sector = sector;
+    }
+
+    public String getNumeroDeRastreo() {
+        return numeroDeRastreo;
+    }
+
+    public void setNumeroDeRastreo(String numeroDeRastreo) {
+        this.numeroDeRastreo = numeroDeRastreo;
+    }
+
+
+    
 
 }

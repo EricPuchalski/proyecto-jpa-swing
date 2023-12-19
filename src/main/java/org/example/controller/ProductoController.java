@@ -6,7 +6,7 @@ import org.example.service.ProductoService;
 
 import java.util.List;
 
-public class ProductoController implements CRUD<Producto>{
+public class ProductoController{
     private final ProductoService productoService;
 
     public ProductoController(ProductoService productoService) {
@@ -19,21 +19,23 @@ public class ProductoController implements CRUD<Producto>{
         productoService.save(producto);
     }
 
-    public Producto findOne(String codigo){
-        return productoService.findOne(codigo);
+    public Producto findOne(Long id){
+        return productoService.findOne(id);
     }
 
     public List<Producto> findAll(){
         return productoService.findAll();
     }
 
-    public void delete(String codigo){
-        productoService.delete(codigo);
+    public void delete(Long id){
+        productoService.delete(id);
     }
 
     public void upDate(Producto producto){
         productoService.upDate(producto);
     }
 
-
+    public List<Producto> buscarPorNombreParcial(String nombre){
+        return productoService.buscarPorNombreParcial(nombre);
+    }
 }
