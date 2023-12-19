@@ -4,14 +4,20 @@
  */
 package org.example.view;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.swing.table.DefaultTableModel;
 import org.example.controller.ClienteController;
 import org.example.controller.JFrameController;
 import org.example.controller.TransportistaController;
 import org.example.dao.ClienteJpaController;
+import org.example.dao.TipoTransportistaJpaController;
+import org.example.dao.TransportistaJpaController;
 import org.example.model.Cliente;
+import org.example.model.Transportista;
 import org.example.service.ClienteService;
+import org.example.service.TransportistaService;
 import org.example.util.Conexion;
 
 /**
@@ -27,6 +33,9 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
      */
     public JPanelCrearPedidoPrimer() {
         this.clienteController = new ClienteController(new ClienteService(new ClienteJpaController(Conexion.getEmf())));
+        this.transportistaController = new TransportistaController(
+                new TransportistaService(new TransportistaJpaController(
+                        new TipoTransportistaJpaController(Conexion.getEmf()),Conexion.getEmf())));
         initComponents();
         this.setSize(800,700);
     }
@@ -52,7 +61,7 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
         btnCancel = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
-        btnCliente1 = new javax.swing.JButton();
+        btnTransportista = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(34, 131, 210));
         addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -134,7 +143,12 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
             }
         });
 
-        btnCliente1.setText("Buscar");
+        btnTransportista.setText("Buscar");
+        btnTransportista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTransportistaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -153,7 +167,7 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtTransportista, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnTransportista, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -184,7 +198,7 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtTransportista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCliente1))
+                    .addComponent(btnTransportista))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
@@ -204,8 +218,19 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        JFrameController.cambiarPanel(this, new JPanelCrearPedidoDepositos(), this);
-
+        if(tblCliente.getRowCount() > 0){
+            if(tblCliente.getSelectedRow()!=-1){
+                if(tblTransportista.getRowCount() > 0){
+                    if(tblTransportista.getSelectedRow()>0){
+                        Long idCliente = Long.parseLong(String.valueOf(tblCliente.getValueAt(tblCliente.getSelectedRow(),0)));
+                        Cliente cliente = clienteController.findOne(idCliente);
+                        Long idTransportista = Long.parseLong(String.valueOf(tblTransportista.getValueAt(tblTransportista.getSelectedRow(),0)));
+                        Transportista transportista = transportistaController.findOne(idTransportista);
+                        JFrameController.cambiarPanel(this, new JPanelCrearPedidoDepositos(cliente,transportista), this);
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
@@ -234,6 +259,30 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
         this.modifyTableCarriers();
     }//GEN-LAST:event_formComponentAdded
 
+    private void btnTransportistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportistaActionPerformed
+                List<Transportista> transportistasBuscados= new ArrayList<>();
+        transportistasBuscados = transportistaController.findAll()
+                .stream()
+                .filter(tr -> tr.getCuit().startsWith(txtTransportista.getText()))
+                .collect(Collectors.toList());
+        DefaultTableModel modeloNuevo = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        String titulos[] = {"Id", "Nombre", "cuit", "Tipo", "cuit"};
+        modeloNuevo.setColumnIdentifiers(titulos);
+
+        if(!transportistasBuscados.isEmpty()){
+            for (Transportista e: transportistasBuscados){
+                Object[] obj = {e.getId(), e.getNombre(),e.getCuit(), e.getTipo().getDescripcion(), e.getCuit()};
+                modeloNuevo.addRow(obj);
+            }
+        }
+        tblTransportista.setModel(modeloNuevo);
+    }//GEN-LAST:event_btnTransportistaActionPerformed
+
     public void modifyTableClients(){
                 DefaultTableModel modeloNuevo = new DefaultTableModel(){
             @Override
@@ -261,8 +310,8 @@ public class JPanelCrearPedidoPrimer extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCliente;
-    private javax.swing.JButton btnCliente1;
     private javax.swing.JButton btnRegister;
+    private javax.swing.JButton btnTransportista;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

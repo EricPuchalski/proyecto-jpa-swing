@@ -4,18 +4,37 @@
  */
 package org.example.view;
 
+import com.google.protobuf.Message;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.example.controller.DepositoController;
 import org.example.controller.JFrameController;
+import org.example.dao.DepositoJpaController;
+import org.example.model.Cliente;
+import org.example.model.Deposito;
+import org.example.model.Transportista;
+import org.example.service.DepositoService;
+import org.example.util.Conexion;
 
 /**
  *
  * @author ericp
  */
 public class JPanelCrearPedidoDepositos extends javax.swing.JPanel {
+    private Transportista transportista;
+    private Cliente cliente;
+    private DepositoController depositoController;
 
     /**
      * Creates new form JPanelCrearPedidoDepositos
      */
-    public JPanelCrearPedidoDepositos() {
+    public JPanelCrearPedidoDepositos(Cliente cliente, Transportista transportista) {
+        this.depositoController = new DepositoController(new DepositoService(new DepositoJpaController(Conexion.getEmf())));
+        this.transportista = transportista;
+        this.cliente = cliente;
         initComponents();
         this.setSize(800,700);
     }
@@ -40,8 +59,15 @@ public class JPanelCrearPedidoDepositos extends javax.swing.JPanel {
         tblDestino = new javax.swing.JTable();
         btnCancel = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
+        btnOrigDeposit = new javax.swing.JButton();
+        btnDestDeposit = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(34, 131, 210));
+        addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                formComponentAdded(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(232, 245, 255));
@@ -109,6 +135,20 @@ public class JPanelCrearPedidoDepositos extends javax.swing.JPanel {
             }
         });
 
+        btnOrigDeposit.setText("Buscar");
+        btnOrigDeposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrigDepositActionPerformed(evt);
+            }
+        });
+
+        btnDestDeposit.setText("Buscar");
+        btnDestDeposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDestDepositActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,20 +158,26 @@ public class JPanelCrearPedidoDepositos extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnOrigDeposit)
+                                .addGap(11, 11, 11))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(26, 26, 26)
+                                    .addComponent(btnDestDeposit))
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(jLabel2)))
@@ -142,23 +188,29 @@ public class JPanelCrearPedidoDepositos extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOrigDeposit))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
+                    .addComponent(btnDestDeposit)
                     .addComponent(txtDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85))
+                .addGap(47, 47, 47))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,12 +223,100 @@ public class JPanelCrearPedidoDepositos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        JFrameController.cambiarPanel(this, new JPanelCrearPedidoProductos(), this);
+        if(tblOrigen.getRowCount() > 0){
+            if(tblOrigen.getSelectedRow()!=-1){
+                if(tblDestino.getRowCount() > 0){
+                    if(tblDestino.getSelectedRow()>0){
+                        Long idOrigen = Long.parseLong(String.valueOf(tblOrigen.getValueAt(tblOrigen.getSelectedRow(),0)));
+                        Deposito depositoOrigen = depositoController.findOne(idOrigen);
+                        Long idDestino = Long.parseLong(String.valueOf(tblDestino.getValueAt(tblDestino.getSelectedRow(),0)));
+                        Deposito depositoDesitno = depositoController.findOne(idDestino);
+                        JFrameController.cambiarPanel(this, new JPanelCrearPedidoProductos(cliente,transportista, depositoOrigen, depositoDesitno), this);
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
+    private void btnOrigDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrigDepositActionPerformed
+        List<Deposito> depositosBuscados= new ArrayList<>();
+        depositosBuscados = depositoController.findAll()
+                .stream()
+                .filter(dep -> dep.getCodigo().startsWith(txtOrigen.getText()))
+                .collect(Collectors.toList());
+        DefaultTableModel modeloNuevo = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        String titulos[] = {"Id", "Nombre", "Continente", "Codigo"};
+        modeloNuevo.setColumnIdentifiers(titulos);
 
+        if(!depositosBuscados.isEmpty()){
+            for (Deposito e: depositosBuscados){
+                Object[] obj = {e.getId(), e.getNombre(),e.getContinente(), e.getCodigo()};
+                modeloNuevo.addRow(obj);
+            }
+        }
+        tblOrigen.setModel(modeloNuevo);
+    }//GEN-LAST:event_btnOrigDepositActionPerformed
+
+    private void btnDestDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDestDepositActionPerformed
+                List<Deposito> depositosBuscados= new ArrayList<>();
+        depositosBuscados = depositoController.findAll()
+                .stream()
+                .filter(dep -> dep.getCodigo().startsWith(txtDestino.getText()))
+                .collect(Collectors.toList());
+        DefaultTableModel modeloNuevo = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        String titulos[] = {"Id", "Nombre", "Continente", "Codigo"};
+        modeloNuevo.setColumnIdentifiers(titulos);
+
+        if(!depositosBuscados.isEmpty()){
+            for (Deposito e: depositosBuscados){
+                Object[] obj = {e.getId(), e.getNombre(),e.getContinente(), e.getCodigo()};
+                modeloNuevo.addRow(obj);
+            }
+        }
+        tblDestino.setModel(modeloNuevo);
+    }//GEN-LAST:event_btnDestDepositActionPerformed
+
+    private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
+        this.modifyDestDeposit();
+        this.modifyOrigDeposit();
+    }//GEN-LAST:event_formComponentAdded
+    public void modifyDestDeposit(){
+        DefaultTableModel modeloNuevo = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        String titulos[] = {"Id", "Nombre", "Continente", "Codigo"};
+        modeloNuevo.setColumnIdentifiers(titulos);
+        tblDestino.setModel(modeloNuevo);
+    }
+    public void modifyOrigDeposit(){
+        DefaultTableModel modeloNuevo = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        String titulos[] = {"Id", "Nombre", "Continente", "Codigo"};
+        modeloNuevo.setColumnIdentifiers(titulos);
+        tblOrigen.setModel(modeloNuevo);
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnDestDeposit;
+    private javax.swing.JButton btnOrigDeposit;
     private javax.swing.JButton btnRegister;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

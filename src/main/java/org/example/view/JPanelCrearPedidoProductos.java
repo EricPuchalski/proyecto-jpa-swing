@@ -15,9 +15,12 @@ import org.example.dao.CategoriaProductoJpaController;
 import org.example.dao.PedidoJpaController;
 import org.example.dao.ProductoJpaController;
 import org.example.dao.ProveedorJpaController;
+import org.example.model.Cliente;
+import org.example.model.Deposito;
 import org.example.model.LineaPedido;
 import org.example.model.Pedido;
 import org.example.model.Producto;
+import org.example.model.Transportista;
 import org.example.service.ProductoService;
 import org.example.util.CargarDatos;
 import org.example.util.Conexion;
@@ -30,11 +33,19 @@ public class JPanelCrearPedidoProductos extends javax.swing.JPanel {
     private ProductoController productoController; 
     private PedidoController pedidoController;
     private LineaPedidoController lineaPedidoController;
+    private Cliente cliente;
+    private Transportista transportista;
+    private Deposito depositoOrigen;
+    private Deposito depositoDestino;
 
     /**
      * Creates new form JPanelCrearPedidoProductos
      */
-    public JPanelCrearPedidoProductos() {
+    public JPanelCrearPedidoProductos(Cliente cliente, Transportista transportista, Deposito depositoOrigen, Deposito depositoDestino) {
+        this.cliente = cliente;
+        this.transportista = transportista;
+        this.depositoDestino = depositoDestino;
+        this.depositoOrigen = depositoOrigen;
         this.productoController = new ProductoController(new ProductoService(new ProductoJpaController(Conexion.getEmf(),new ProveedorJpaController(Conexion.getEmf()),new CategoriaProductoJpaController(Conexion.getEmf()))));
         initComponents();
         this.setSize(800,700);
@@ -219,7 +230,7 @@ public class JPanelCrearPedidoProductos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRegister1ActionPerformed
 
     private void btnCancel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancel1ActionPerformed
-        JFrameController.cambiarPanel(this, new JPanelCrearPedidoDepositos(), this);
+        JFrameController.cambiarPanel(this,this, this);
     }//GEN-LAST:event_btnCancel1ActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

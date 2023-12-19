@@ -38,7 +38,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="txtTransportista" min="-2" pref="359" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnCliente1" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="btnTransportista" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane6" alignment="0" min="-2" pref="589" max="-2" attributes="0"/>
                           <Component id="jScrollPane5" alignment="0" min="-2" pref="589" max="-2" attributes="0"/>
@@ -78,7 +78,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtTransportista" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCliente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnTransportista" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane6" min="-2" pref="155" max="-2" attributes="0"/>
@@ -225,10 +225,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClienteActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCliente1">
+    <Component class="javax.swing.JButton" name="btnTransportista">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTransportistaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
